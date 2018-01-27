@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['page_20size',['Page Size',['../group___f_l_a_s_h_ex___page___size.html',1,'']]],
+  ['pwr',['PWR',['../group___p_w_r.html',1,'']]],
+  ['pwr_20exported_20constants',['PWR Exported Constants',['../group___p_w_r___exported___constants.html',1,'']]],
+  ['pwr_20exported_20functions',['PWR Exported Functions',['../group___p_w_r___exported___functions.html',1,'']]],
+  ['peripheral_20control_20functions',['Peripheral Control functions',['../group___p_w_r___exported___functions___group2.html',1,'']]],
+  ['pwr_20exported_20macros',['PWR Exported Macros',['../group___p_w_r___exported___macros.html',1,'']]],
+  ['pwr_20exported_20types',['PWR Exported Types',['../group___p_w_r___exported___types.html',1,'']]],
+  ['pwr_20flag',['PWR Flag',['../group___p_w_r___flag.html',1,'']]],
+  ['pwr_5fprivate_5fconstants',['PWR_Private_Constants',['../group___p_w_r___private___constants.html',1,'']]],
+  ['pwr_20private_20macros',['PWR Private Macros',['../group___p_w_r___private___macros.html',1,'']]],
+  ['pwr_20pvd_20detection_20level',['PWR PVD detection level',['../group___p_w_r___p_v_d__detection__level.html',1,'']]],
+  ['pwr_20pvd_20mode',['PWR PVD Mode',['../group___p_w_r___p_v_d___mode.html',1,'']]],
+  ['pwr_20regulator_20state_20in_20sleep_2fstop_20mode',['PWR Regulator state in SLEEP/STOP mode',['../group___p_w_r___regulator__state__in___s_l_e_e_p___s_t_o_p__mode.html',1,'']]],
+  ['pwr_20sleep_20mode_20entry',['PWR SLEEP mode entry',['../group___p_w_r___s_l_e_e_p__mode__entry.html',1,'']]],
+  ['pwr_20stop_20mode_20entry',['PWR STOP mode entry',['../group___p_w_r___s_t_o_p__mode__entry.html',1,'']]],
+  ['pwr_20wakeup_20pins',['PWR WakeUp Pins',['../group___p_w_r___wake_up___pins.html',1,'']]],
+  ['peripheral_20clock_20enable_20disable',['Peripheral Clock Enable Disable',['../group___r_c_c___peripheral___clock___enable___disable.html',1,'']]],
+  ['pll_20clock_20source',['PLL Clock Source',['../group___r_c_c___p_l_l___clock___source.html',1,'']]],
+  ['pll_20config',['PLL Config',['../group___r_c_c___p_l_l___config.html',1,'']]],
+  ['pll_20configuration',['PLL Configuration',['../group___r_c_c___p_l_l___configuration.html',1,'']]],
+  ['periph_20clock_20selection',['Periph Clock Selection',['../group___r_c_c_ex___periph___clock___selection.html',1,'']]],
+  ['peripheral_20clock_20enable_20disable',['Peripheral Clock Enable Disable',['../group___r_c_c_ex___peripheral___clock___enable___disable.html',1,'']]],
+  ['peripheral_20configuration',['Peripheral Configuration',['../group___r_c_c_ex___peripheral___configuration.html',1,'']]],
+  ['pll_20multiplication_20factor',['PLL Multiplication Factor',['../group___r_c_c_ex___p_l_l___multiplication___factor.html',1,'']]]
+];

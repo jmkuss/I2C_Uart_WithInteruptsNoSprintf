@@ -1,0 +1,80 @@
+\hypertarget{stm32f1xx__hal__tim__ex_8h}{}\section{Inc/stm32f1xx\+\_\+hal\+\_\+tim\+\_\+ex.h File Reference}
+\label{stm32f1xx__hal__tim__ex_8h}\index{Inc/stm32f1xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h@{Inc/stm32f1xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}
+
+
+Header file of T\+IM H\+AL Extension module.  
+
+
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_t_i_m___hall_sensor___init_type_def}{T\+I\+M\+\_\+\+Hall\+Sensor\+\_\+\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em T\+IM Hall sensor Configuration Structure definition. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_t_i_m___master_config_type_def}{T\+I\+M\+\_\+\+Master\+Config\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em T\+IM Master configuration Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___t_i_m_ex_ga199e848f0a301987a500faea0db2dd70}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+O\+Cx\+P\+R\+E\+L\+O\+AD}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the T\+IM Output compare preload. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___t_i_m_ex_ga3e0ec4eb797b54c408a3be067f41a2f8}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+D\+I\+S\+A\+B\+L\+E\+\_\+\+O\+Cx\+P\+R\+E\+L\+O\+AD}(\+\_\+\+\_\+\+H\+A\+N\+D\+L\+E\+\_\+\+\_\+,  \+\_\+\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Resets the T\+IM Output compare preload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def} {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Hall\+Sensor\+\_\+\+Init} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim, \hyperlink{struct_t_i_m___hall_sensor___init_type_def}{T\+I\+M\+\_\+\+Hall\+Sensor\+\_\+\+Init\+Type\+Def} $\ast$s\+Config)
+\item 
+\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def} {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Hall\+Sensor\+\_\+\+De\+Init} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim)
+\item 
+void {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Hall\+Sensor\+\_\+\+Msp\+Init} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim)
+\item 
+void {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Hall\+Sensor\+\_\+\+Msp\+De\+Init} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim)
+\item 
+\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def} {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Hall\+Sensor\+\_\+\+Start} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim)
+\item 
+\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def} {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Hall\+Sensor\+\_\+\+Stop} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim)
+\item 
+\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def} {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Hall\+Sensor\+\_\+\+Start\+\_\+\+IT} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim)
+\item 
+\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def} {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Hall\+Sensor\+\_\+\+Stop\+\_\+\+IT} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim)
+\item 
+\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def} {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Hall\+Sensor\+\_\+\+Start\+\_\+\+D\+MA} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim, uint32\+\_\+t $\ast$p\+Data, uint16\+\_\+t Length)
+\item 
+\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def} {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Hall\+Sensor\+\_\+\+Stop\+\_\+\+D\+MA} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim)
+\item 
+\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def} {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Master\+Config\+Synchronization} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim, \hyperlink{struct_t_i_m___master_config_type_def}{T\+I\+M\+\_\+\+Master\+Config\+Type\+Def} $\ast$s\+Master\+Config)
+\item 
+void {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Commutation\+Callback} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim)
+\item 
+void {\bfseries H\+A\+L\+\_\+\+T\+I\+M\+Ex\+\_\+\+Break\+Callback} (\hyperlink{struct_t_i_m___handle_type_def}{T\+I\+M\+\_\+\+Handle\+Type\+Def} $\ast$htim)
+\item 
+void {\bfseries T\+I\+M\+Ex\+\_\+\+D\+M\+A\+Commutation\+Cplt} (\hyperlink{group___d_m_a___exported___types_ga92b907d56a9c29b93d46782a7a04f91e}{D\+M\+A\+\_\+\+Handle\+Type\+Def} $\ast$hdma)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file of T\+IM H\+AL Extension module. 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+12-\/\+May-\/2017 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+H\+T(c) 2016 S\+T\+Microelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 

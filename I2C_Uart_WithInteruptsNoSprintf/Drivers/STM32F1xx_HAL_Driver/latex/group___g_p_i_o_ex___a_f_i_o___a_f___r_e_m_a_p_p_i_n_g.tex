@@ -1,0 +1,922 @@
+\hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g}{}\section{Alternate Function Remapping}
+\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g}\index{Alternate Function Remapping@{Alternate Function Remapping}}
+
+
+This section propose definition to remap the alternate function to some other port/pins.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gab8c66251f12d7d4b574b1257c73b5c70}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+E\+N\+A\+B\+LE}()~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+S\+P\+I1\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Enable the remapping of S\+P\+I1 alternate function N\+SS, S\+CK, M\+I\+SO and M\+O\+SI. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga8fceca9b4e97561de6d1a9b6deb28550}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+D\+I\+S\+A\+B\+LE}()~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+S\+P\+I1\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Disable the remapping of S\+P\+I1 alternate function N\+SS, S\+CK, M\+I\+SO and M\+O\+SI. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaa792242eacda833df7db47017594e3ea}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+E\+N\+A\+B\+LE}()~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+I2\+C1\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Enable the remapping of I2\+C1 alternate function S\+CL and S\+DA. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaec219c2e592b079df38e12bb793de5e5}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+D\+I\+S\+A\+B\+LE}()~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+I2\+C1\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Disable the remapping of I2\+C1 alternate function S\+CL and S\+DA. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga19df3a1377356ba59a8abc04bcf2b859}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+E\+N\+A\+B\+LE}()~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Enable the remapping of U\+S\+A\+R\+T1 alternate function TX and RX. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga5fd5cd3f1f121c8c310f6b1a390b7b51}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+D\+I\+S\+A\+B\+LE}()~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Disable the remapping of U\+S\+A\+R\+T1 alternate function TX and RX. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaed981d1451f0a7514a57d9d7a90fba04}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+E\+N\+A\+B\+LE}()~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Enable the remapping of U\+S\+A\+R\+T2 alternate function C\+TS, R\+TS, CK, TX and RX. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaf72cbf8c2a79923d868d1203b8c133f4}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+D\+I\+S\+A\+B\+LE}()~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Disable the remapping of U\+S\+A\+R\+T2 alternate function C\+TS, R\+TS, CK, TX and RX. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaed50d157afc9236c3f6cab368e6fa29b}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+E\+N\+A\+B\+LE}()
+\begin{DoxyCompactList}\small\item\em Enable the remapping of U\+S\+A\+R\+T3 alternate function C\+TS, R\+TS, CK, TX and RX. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga176ae8487c80d60664759a295961de31}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+P\+A\+R\+T\+I\+AL}()
+\begin{DoxyCompactList}\small\item\em Enable the remapping of U\+S\+A\+R\+T3 alternate function C\+TS, R\+TS, CK, TX and RX. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga4c86c7456cb7eda460d258245bb2e446}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+D\+I\+S\+A\+B\+LE}()
+\begin{DoxyCompactList}\small\item\em Disable the remapping of U\+S\+A\+R\+T3 alternate function C\+TS, R\+TS, CK, TX and RX. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaef7a1246d22973634c293094a2418200}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+E\+N\+A\+B\+LE}()
+\begin{DoxyCompactList}\small\item\em Enable the remapping of T\+I\+M1 alternate function channels 1 to 4, 1N to 3N, external trigger (E\+TR) and Break input (B\+K\+IN) \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga4e4fec9496a03c10c94f0f4e8d940b08}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+P\+A\+R\+T\+I\+AL}()
+\begin{DoxyCompactList}\small\item\em Enable the remapping of T\+I\+M1 alternate function channels 1 to 4, 1N to 3N, external trigger (E\+TR) and Break input (B\+K\+IN) \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga0d5d38cb3fbb600d76fdd4625e3d700c}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+D\+I\+S\+A\+B\+LE}()
+\begin{DoxyCompactList}\small\item\em Disable the remapping of T\+I\+M1 alternate function channels 1 to 4, 1N to 3N, external trigger (E\+TR) and Break input (B\+K\+IN) \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gad5ea791926cf2e879de0fd08cb129775}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+E\+N\+A\+B\+LE}()
+\begin{DoxyCompactList}\small\item\em Enable the remapping of T\+I\+M2 alternate function channels 1 to 4 and external trigger (E\+TR) \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gade6fd88cc370467cff853b404978190a}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+2}()
+\begin{DoxyCompactList}\small\item\em Enable the remapping of T\+I\+M2 alternate function channels 1 to 4 and external trigger (E\+TR) \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga3ffee1bceaa141be048b7f60c11c0943}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+1}()
+\begin{DoxyCompactList}\small\item\em Enable the remapping of T\+I\+M2 alternate function channels 1 to 4 and external trigger (E\+TR) \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga8bf8cf84fc099076c3ec6d7d31dd8abc}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+D\+I\+S\+A\+B\+LE}()
+\begin{DoxyCompactList}\small\item\em Disable the remapping of T\+I\+M2 alternate function channels 1 to 4 and external trigger (E\+TR) \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga276fb7e4041131b65c5bf293180dd052}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+E\+N\+A\+B\+LE}()
+\begin{DoxyCompactList}\small\item\em Enable the remapping of T\+I\+M3 alternate function channels 1 to 4. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga207839eb8e1b063b22c2e579faec4183}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+P\+A\+R\+T\+I\+AL}()
+\begin{DoxyCompactList}\small\item\em Enable the remapping of T\+I\+M3 alternate function channels 1 to 4. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gade7c509d371e710403340173b3fbfecd}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+D\+I\+S\+A\+B\+LE}()
+\begin{DoxyCompactList}\small\item\em Disable the remapping of T\+I\+M3 alternate function channels 1 to 4. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga9e9a7e0d5132518d81e0316895d4f410}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+E\+N\+A\+B\+LE}()~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+T\+I\+M4\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Enable the remapping of T\+I\+M4 alternate function channels 1 to 4. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gae59894a1c15940479146c77596176dbe}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+D\+I\+S\+A\+B\+LE}()~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+T\+I\+M4\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Disable the remapping of T\+I\+M4 alternate function channels 1 to 4. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga556c166ea45a713875b6a179b101fa14}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+E\+N\+A\+B\+LE}()~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+P\+D01\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Enable the remapping of P\+D0 and P\+D1. When the H\+SE oscillator is not used (application running on internal 8 M\+Hz RC) P\+D0 and P\+D1 can be mapped on O\+S\+C\+\_\+\+IN and O\+S\+C\+\_\+\+O\+UT. This is available only on 36, 48 and 64 pins packages (P\+D0 and P\+D1 are available on 100-\/pin and 144-\/pin packages, no need for remapping). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gab56e83c0681be2899477e8d9376100ab}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+D\+I\+S\+A\+B\+LE}()~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+P\+D01\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Disable the remapping of P\+D0 and P\+D1. When the H\+SE oscillator is not used (application running on internal 8 M\+Hz RC) P\+D0 and P\+D1 can be mapped on O\+S\+C\+\_\+\+IN and O\+S\+C\+\_\+\+O\+UT. This is available only on 36, 48 and 64 pins packages (P\+D0 and P\+D1 are available on 100-\/pin and 144-\/pin packages, no need for remapping). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gae6a3cd6210ca82af1b21a56b46e40835}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+E\+N\+A\+B\+LE}()~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Enable the remapping of A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+NJ (A\+DC 1 External trigger injected conversion). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gabfe11a5ef987530e111e8e20a11e5be2}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+D\+I\+S\+A\+B\+LE}()~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Disable the remapping of A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+NJ (A\+DC 1 External trigger injected conversion). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gad8af529aefe269d0bd67b9c4095bfed8}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+E\+N\+A\+B\+LE}()~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Enable the remapping of A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+EG (A\+DC 1 External trigger regular conversion). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gac48e8a99b97904542ff0b1b9fb7ad8f5}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+D\+I\+S\+A\+B\+LE}()~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+R\+E\+M\+AP)
+\begin{DoxyCompactList}\small\item\em Disable the remapping of A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+EG (A\+DC 1 External trigger regular conversion). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga9e3b30234057b920408944eecfbd1e40}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+E\+N\+A\+B\+LE}()
+\begin{DoxyCompactList}\small\item\em Enable the Serial wire J\+T\+AG configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga1febef38fae374565df1b5dfdfd8c906}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+N\+J\+T\+R\+ST}()
+\begin{DoxyCompactList}\small\item\em Enable the Serial wire J\+T\+AG configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga31fc766920d61e6bb176500c0a4077e5}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+J\+T\+AG}()
+\begin{DoxyCompactList}\small\item\em Enable the Serial wire J\+T\+AG configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga3225ff38abac044926aac7d6f1c84168}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+D\+I\+S\+A\+B\+LE}()
+\begin{DoxyCompactList}\small\item\em Disable the Serial wire J\+T\+AG configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This section propose definition to remap the alternate function to some other port/pins. 
+
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gabfe11a5ef987530e111e8e20a11e5be2}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gabfe11a5ef987530e111e8e20a11e5be2}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_ADC1\_ETRGINJ\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Disable the remapping of A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+NJ (A\+DC 1 External trigger injected conversion). 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: A\+D\+C1 External trigger injected conversion is connected to E\+X\+T\+I15 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 465 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gae6a3cd6210ca82af1b21a56b46e40835}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gae6a3cd6210ca82af1b21a56b46e40835}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_ADC1\_ETRGINJ\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+N\+J\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Enable the remapping of A\+D\+C1\+\_\+\+E\+T\+R\+G\+I\+NJ (A\+DC 1 External trigger injected conversion). 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: A\+D\+C1 External Event injected conversion is connected to T\+I\+M8 Channel4. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 458 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gac48e8a99b97904542ff0b1b9fb7ad8f5}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gac48e8a99b97904542ff0b1b9fb7ad8f5}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_ADC1\_ETRGREG\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Disable the remapping of A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+EG (A\+DC 1 External trigger regular conversion). 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: A\+D\+C1 External trigger regular conversion is connected to E\+X\+T\+I11 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 479 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gad8af529aefe269d0bd67b9c4095bfed8}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gad8af529aefe269d0bd67b9c4095bfed8}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_ADC1\_ETRGREG\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+E\+G\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Enable the remapping of A\+D\+C1\+\_\+\+E\+T\+R\+G\+R\+EG (A\+DC 1 External trigger regular conversion). 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: A\+D\+C1 External Event regular conversion is connected to T\+I\+M8 T\+R\+G0. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 472 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaec219c2e592b079df38e12bb793de5e5}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaec219c2e592b079df38e12bb793de5e5}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_I2C1\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+I2\+C1\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Disable the remapping of I2\+C1 alternate function S\+CL and S\+DA. 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: No remap (S\+C\+L/\+P\+B6, S\+D\+A/\+P\+B7) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 165 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaa792242eacda833df7db47017594e3ea}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaa792242eacda833df7db47017594e3ea}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_I2C1\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+I2\+C1\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+I2\+C1\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Enable the remapping of I2\+C1 alternate function S\+CL and S\+DA. 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: Remap (S\+C\+L/\+P\+B8, S\+D\+A/\+P\+B9) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 158 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gab56e83c0681be2899477e8d9376100ab}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gab56e83c0681be2899477e8d9376100ab}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_PD01\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+P\+D01\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Disable the remapping of P\+D0 and P\+D1. When the H\+SE oscillator is not used (application running on internal 8 M\+Hz RC) P\+D0 and P\+D1 can be mapped on O\+S\+C\+\_\+\+IN and O\+S\+C\+\_\+\+O\+UT. This is available only on 36, 48 and 64 pins packages (P\+D0 and P\+D1 are available on 100-\/pin and 144-\/pin packages, no need for remapping). 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: No remapping of P\+D0 and P\+D1 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 378 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga556c166ea45a713875b6a179b101fa14}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga556c166ea45a713875b6a179b101fa14}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_PD01\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+P\+D01\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+P\+D01\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Enable the remapping of P\+D0 and P\+D1. When the H\+SE oscillator is not used (application running on internal 8 M\+Hz RC) P\+D0 and P\+D1 can be mapped on O\+S\+C\+\_\+\+IN and O\+S\+C\+\_\+\+O\+UT. This is available only on 36, 48 and 64 pins packages (P\+D0 and P\+D1 are available on 100-\/pin and 144-\/pin packages, no need for remapping). 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: P\+D0 remapped on O\+S\+C\+\_\+\+IN, P\+D1 remapped on O\+S\+C\+\_\+\+O\+UT. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 368 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga8fceca9b4e97561de6d1a9b6deb28550}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga8fceca9b4e97561de6d1a9b6deb28550}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_SPI1\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+S\+P\+I1\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Disable the remapping of S\+P\+I1 alternate function N\+SS, S\+CK, M\+I\+SO and M\+O\+SI. 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: No remap (N\+S\+S/\+P\+A4, S\+C\+K/\+P\+A5, M\+I\+S\+O/\+P\+A6, M\+O\+S\+I/\+P\+A7) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 151 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gab8c66251f12d7d4b574b1257c73b5c70}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gab8c66251f12d7d4b574b1257c73b5c70}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_SPI1\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+P\+I1\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+S\+P\+I1\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Enable the remapping of S\+P\+I1 alternate function N\+SS, S\+CK, M\+I\+SO and M\+O\+SI. 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: Remap (N\+S\+S/\+P\+A15, S\+C\+K/\+P\+B3, M\+I\+S\+O/\+P\+B4, M\+O\+S\+I/\+P\+B5) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 144 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga3225ff38abac044926aac7d6f1c84168}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga3225ff38abac044926aac7d6f1c84168}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_SWJ\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_SWJ\_CFG);         \(\backslash\)
+                                            SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_SWJ\_CFG\_DISABLE);   \(\backslash\)
+                                          \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Disable the Serial wire J\+T\+AG configuration. 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: J\+T\+A\+G-\/\+DP Disabled and S\+W-\/\+DP Disabled 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 547 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga9e3b30234057b920408944eecfbd1e40}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga9e3b30234057b920408944eecfbd1e40}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_SWJ\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_SWJ\_CFG);         \(\backslash\)
+                                           SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_SWJ\_CFG\_RESET);     \(\backslash\)
+                                         \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the Serial wire J\+T\+AG configuration. 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: Full S\+WJ (J\+T\+A\+G-\/\+DP + S\+W-\/\+DP)\+: Reset State 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 520 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga31fc766920d61e6bb176500c0a4077e5}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga31fc766920d61e6bb176500c0a4077e5}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+J\+T\+AG@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+J\+T\+AG}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+J\+T\+AG@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+J\+T\+AG}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+J\+T\+AG}{\_\_HAL\_AFIO\_REMAP\_SWJ\_NOJTAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+J\+T\+AG(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_SWJ\_CFG);           \(\backslash\)
+                                            SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_SWJ\_CFG\_JTAGDISABLE); \(\backslash\)
+                                          \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the Serial wire J\+T\+AG configuration. 
+
+\begin{DoxyNote}{Note}
+N\+O\+J\+T\+AG\+: J\+T\+A\+G-\/\+DP Disabled and S\+W-\/\+DP Enabled 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 538 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga1febef38fae374565df1b5dfdfd8c906}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga1febef38fae374565df1b5dfdfd8c906}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+N\+J\+T\+R\+ST@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+N\+J\+T\+R\+ST}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+N\+J\+T\+R\+ST@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+N\+J\+T\+R\+ST}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+N\+J\+T\+R\+ST}{\_\_HAL\_AFIO\_REMAP\_SWJ\_NONJTRST}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+S\+W\+J\+\_\+\+N\+O\+N\+J\+T\+R\+ST(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_SWJ\_CFG);         \(\backslash\)
+                                              SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_SWJ\_CFG\_NOJNTRST);  \(\backslash\)
+                                            \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the Serial wire J\+T\+AG configuration. 
+
+\begin{DoxyNote}{Note}
+N\+O\+N\+J\+T\+R\+ST\+: Full S\+WJ (J\+T\+A\+G-\/\+DP + S\+W-\/\+DP) but without N\+J\+T\+R\+ST 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 529 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga0d5d38cb3fbb600d76fdd4625e3d700c}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga0d5d38cb3fbb600d76fdd4625e3d700c}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_TIM1\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM1\_REMAP);       \(\backslash\)
+                                            SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM1\_REMAP\_NOREMAP); \(\backslash\)
+                                          \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Disable the remapping of T\+I\+M1 alternate function channels 1 to 4, 1N to 3N, external trigger (E\+TR) and Break input (B\+K\+IN) 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: No remap (E\+T\+R/\+P\+A12, C\+H1/\+P\+A8, C\+H2/\+P\+A9, C\+H3/\+P\+A10, C\+H4/\+P\+A11, B\+K\+I\+N/\+P\+B12, C\+H1\+N/\+P\+B13, C\+H2\+N/\+P\+B14, C\+H3\+N/\+P\+B15) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 244 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaef7a1246d22973634c293094a2418200}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaef7a1246d22973634c293094a2418200}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_TIM1\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM1\_REMAP);         \(\backslash\)
+                                            SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM1\_REMAP\_FULLREMAP); \(\backslash\)
+                                          \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the remapping of T\+I\+M1 alternate function channels 1 to 4, 1N to 3N, external trigger (E\+TR) and Break input (B\+K\+IN) 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: Full remap (E\+T\+R/\+P\+E7, C\+H1/\+P\+E9, C\+H2/\+P\+E11, C\+H3/\+P\+E13, C\+H4/\+P\+E14, B\+K\+I\+N/\+P\+E15, C\+H1\+N/\+P\+E8, C\+H2\+N/\+P\+E10, C\+H3\+N/\+P\+E12) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 226 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga4e4fec9496a03c10c94f0f4e8d940b08}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga4e4fec9496a03c10c94f0f4e8d940b08}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+P\+A\+R\+T\+I\+AL@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+P\+A\+R\+T\+I\+AL}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+P\+A\+R\+T\+I\+AL@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+P\+A\+R\+T\+I\+AL}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+P\+A\+R\+T\+I\+AL}{\_\_HAL\_AFIO\_REMAP\_TIM1\_PARTIAL}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M1\+\_\+\+P\+A\+R\+T\+I\+AL(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM1\_REMAP);            \(\backslash\)
+                                             SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM1\_REMAP\_PARTIALREMAP); \(\backslash\)
+                                           \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the remapping of T\+I\+M1 alternate function channels 1 to 4, 1N to 3N, external trigger (E\+TR) and Break input (B\+K\+IN) 
+
+\begin{DoxyNote}{Note}
+P\+A\+R\+T\+I\+AL\+: Partial remap (E\+T\+R/\+P\+A12, C\+H1/\+P\+A8, C\+H2/\+P\+A9, C\+H3/\+P\+A10, C\+H4/\+P\+A11, B\+K\+I\+N/\+P\+A6, C\+H1\+N/\+P\+A7, C\+H2\+N/\+P\+B0, C\+H3\+N/\+P\+B1) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 235 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga8bf8cf84fc099076c3ec6d7d31dd8abc}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga8bf8cf84fc099076c3ec6d7d31dd8abc}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_TIM2\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM2\_REMAP);         \(\backslash\)
+                                            SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM2\_REMAP\_NOREMAP);   \(\backslash\)
+                                          \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Disable the remapping of T\+I\+M2 alternate function channels 1 to 4 and external trigger (E\+TR) 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: No remap (C\+H1/\+E\+T\+R/\+P\+A0, C\+H2/\+P\+A1, C\+H3/\+P\+A2, C\+H4/\+P\+A3) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 280 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gad5ea791926cf2e879de0fd08cb129775}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gad5ea791926cf2e879de0fd08cb129775}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_TIM2\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM2\_REMAP);         \(\backslash\)
+                                            SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM2\_REMAP\_FULLREMAP); \(\backslash\)
+                                          \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the remapping of T\+I\+M2 alternate function channels 1 to 4 and external trigger (E\+TR) 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: Full remap (C\+H1/\+E\+T\+R/\+P\+A15, C\+H2/\+P\+B3, C\+H3/\+P\+B10, C\+H4/\+P\+B11) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 253 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga3ffee1bceaa141be048b7f60c11c0943}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga3ffee1bceaa141be048b7f60c11c0943}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+1@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+1}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+1@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+1}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+1}{\_\_HAL\_AFIO\_REMAP\_TIM2\_PARTIAL\_1}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+1(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM2\_REMAP);             \(\backslash\)
+                                               SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM2\_REMAP\_PARTIALREMAP1); \(\backslash\)
+                                             \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the remapping of T\+I\+M2 alternate function channels 1 to 4 and external trigger (E\+TR) 
+
+\begin{DoxyNote}{Note}
+P\+A\+R\+T\+I\+A\+L\+\_\+1\+: Partial remap (C\+H1/\+E\+T\+R/\+P\+A15, C\+H2/\+P\+B3, C\+H3/\+P\+A2, C\+H4/\+P\+A3) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 271 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gade6fd88cc370467cff853b404978190a}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gade6fd88cc370467cff853b404978190a}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+2@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+2}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+2@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+2}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+2}{\_\_HAL\_AFIO\_REMAP\_TIM2\_PARTIAL\_2}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M2\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+2(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM2\_REMAP);             \(\backslash\)
+                                               SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM2\_REMAP\_PARTIALREMAP2); \(\backslash\)
+                                             \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the remapping of T\+I\+M2 alternate function channels 1 to 4 and external trigger (E\+TR) 
+
+\begin{DoxyNote}{Note}
+P\+A\+R\+T\+I\+A\+L\+\_\+2\+: Partial remap (C\+H1/\+E\+T\+R/\+P\+A0, C\+H2/\+P\+A1, C\+H3/\+P\+B10, C\+H4/\+P\+B11) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 262 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gade7c509d371e710403340173b3fbfecd}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gade7c509d371e710403340173b3fbfecd}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_TIM3\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM3\_REMAP);           \(\backslash\)
+                                              SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM3\_REMAP\_NOREMAP);     \(\backslash\)
+                                            \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Disable the remapping of T\+I\+M3 alternate function channels 1 to 4. 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: No remap (C\+H1/\+P\+A6, C\+H2/\+P\+A7, C\+H3/\+P\+B0, C\+H4/\+P\+B1) 
+
+T\+I\+M3\+\_\+\+E\+TR on P\+E0 is not re-\/mapped. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 310 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga276fb7e4041131b65c5bf293180dd052}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga276fb7e4041131b65c5bf293180dd052}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_TIM3\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM3\_REMAP);         \(\backslash\)
+                                            SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM3\_REMAP\_FULLREMAP); \(\backslash\)
+                                          \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the remapping of T\+I\+M3 alternate function channels 1 to 4. 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: Full remap (C\+H1/\+P\+C6, C\+H2/\+P\+C7, C\+H3/\+P\+C8, C\+H4/\+P\+C9) 
+
+T\+I\+M3\+\_\+\+E\+TR on P\+E0 is not re-\/mapped. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 290 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga207839eb8e1b063b22c2e579faec4183}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga207839eb8e1b063b22c2e579faec4183}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+P\+A\+R\+T\+I\+AL@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+P\+A\+R\+T\+I\+AL}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+P\+A\+R\+T\+I\+AL@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+P\+A\+R\+T\+I\+AL}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+P\+A\+R\+T\+I\+AL}{\_\_HAL\_AFIO\_REMAP\_TIM3\_PARTIAL}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M3\+\_\+\+P\+A\+R\+T\+I\+AL(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM3\_REMAP);            \(\backslash\)
+                                               SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_TIM3\_REMAP\_PARTIALREMAP); \(\backslash\)
+                                             \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the remapping of T\+I\+M3 alternate function channels 1 to 4. 
+
+\begin{DoxyNote}{Note}
+P\+A\+R\+T\+I\+AL\+: Partial remap (C\+H1/\+P\+B4, C\+H2/\+P\+B5, C\+H3/\+P\+B0, C\+H4/\+P\+B1) 
+
+T\+I\+M3\+\_\+\+E\+TR on P\+E0 is not re-\/mapped. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 300 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gae59894a1c15940479146c77596176dbe}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gae59894a1c15940479146c77596176dbe}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_TIM4\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+T\+I\+M4\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Disable the remapping of T\+I\+M4 alternate function channels 1 to 4. 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: No remap (T\+I\+M4\+\_\+\+C\+H1/\+P\+B6, T\+I\+M4\+\_\+\+C\+H2/\+P\+B7, T\+I\+M4\+\_\+\+C\+H3/\+P\+B8, T\+I\+M4\+\_\+\+C\+H4/\+P\+B9) 
+
+T\+I\+M4\+\_\+\+E\+TR on P\+E0 is not re-\/mapped. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 328 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga9e9a7e0d5132518d81e0316895d4f410}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga9e9a7e0d5132518d81e0316895d4f410}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_TIM4\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+T\+I\+M4\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+T\+I\+M4\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Enable the remapping of T\+I\+M4 alternate function channels 1 to 4. 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: Full remap (T\+I\+M4\+\_\+\+C\+H1/\+P\+D12, T\+I\+M4\+\_\+\+C\+H2/\+P\+D13, T\+I\+M4\+\_\+\+C\+H3/\+P\+D14, T\+I\+M4\+\_\+\+C\+H4/\+P\+D15) 
+
+T\+I\+M4\+\_\+\+E\+TR on P\+E0 is not re-\/mapped. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 320 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga5fd5cd3f1f121c8c310f6b1a390b7b51}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga5fd5cd3f1f121c8c310f6b1a390b7b51}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_USART1\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Disable the remapping of U\+S\+A\+R\+T1 alternate function TX and RX. 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: No remap (T\+X/\+P\+A9, R\+X/\+P\+A10) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 179 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga19df3a1377356ba59a8abc04bcf2b859}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga19df3a1377356ba59a8abc04bcf2b859}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_USART1\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Enable the remapping of U\+S\+A\+R\+T1 alternate function TX and RX. 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: Remap (T\+X/\+P\+B6, R\+X/\+P\+B7) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 172 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaf72cbf8c2a79923d868d1203b8c133f4}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaf72cbf8c2a79923d868d1203b8c133f4}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_USART2\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~C\+L\+E\+A\+R\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Disable the remapping of U\+S\+A\+R\+T2 alternate function C\+TS, R\+TS, CK, TX and RX. 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: No remap (C\+T\+S/\+P\+A0, R\+T\+S/\+P\+A1, T\+X/\+P\+A2, R\+X/\+P\+A3, C\+K/\+P\+A4) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 193 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaed981d1451f0a7514a57d9d7a90fba04}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaed981d1451f0a7514a57d9d7a90fba04}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_USART2\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~S\+E\+T\+\_\+\+B\+IT(A\+F\+IO-\/$>$M\+A\+PR, A\+F\+I\+O\+\_\+\+M\+A\+P\+R\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+R\+E\+M\+AP)}
+
+
+
+Enable the remapping of U\+S\+A\+R\+T2 alternate function C\+TS, R\+TS, CK, TX and RX. 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: Remap (C\+T\+S/\+P\+D3, R\+T\+S/\+P\+D4, T\+X/\+P\+D5, R\+X/\+P\+D6, C\+K/\+P\+D7) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 186 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga4c86c7456cb7eda460d258245bb2e446}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga4c86c7456cb7eda460d258245bb2e446}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+D\+I\+S\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+D\+I\+S\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+D\+I\+S\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_USART3\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_USART3\_REMAP);       \(\backslash\)
+                                              SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_USART3\_REMAP\_NOREMAP); \(\backslash\)
+                                            \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Disable the remapping of U\+S\+A\+R\+T3 alternate function C\+TS, R\+TS, CK, TX and RX. 
+
+\begin{DoxyNote}{Note}
+D\+I\+S\+A\+B\+LE\+: No remap (T\+X/\+P\+B10, R\+X/\+P\+B11, C\+K/\+P\+B12, C\+T\+S/\+P\+B13, R\+T\+S/\+P\+B14) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 217 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaed50d157afc9236c3f6cab368e6fa29b}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_gaed50d157afc9236c3f6cab368e6fa29b}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+E\+N\+A\+B\+LE}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+E\+N\+A\+B\+LE}{\_\_HAL\_AFIO\_REMAP\_USART3\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_USART3\_REMAP);            \(\backslash\)
+                                              SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_USART3\_REMAP\_FULLREMAP);    \(\backslash\)
+                                            \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the remapping of U\+S\+A\+R\+T3 alternate function C\+TS, R\+TS, CK, TX and RX. 
+
+\begin{DoxyNote}{Note}
+E\+N\+A\+B\+LE\+: Full remap (T\+X/\+P\+D8, R\+X/\+P\+D9, C\+K/\+P\+D10, C\+T\+S/\+P\+D11, R\+T\+S/\+P\+D12) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 200 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga176ae8487c80d60664759a295961de31}\label{group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g_ga176ae8487c80d60664759a295961de31}} 
+\index{Alternate Function Remapping@{Alternate Function Remapping}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+P\+A\+R\+T\+I\+AL@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+P\+A\+R\+T\+I\+AL}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+P\+A\+R\+T\+I\+AL@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+P\+A\+R\+T\+I\+AL}!Alternate Function Remapping@{Alternate Function Remapping}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+P\+A\+R\+T\+I\+AL}{\_\_HAL\_AFIO\_REMAP\_USART3\_PARTIAL}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+A\+F\+I\+O\+\_\+\+R\+E\+M\+A\+P\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+P\+A\+R\+T\+I\+AL(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}\{ CLEAR\_BIT(AFIO->MAPR, AFIO\_MAPR\_USART3\_REMAP);            \(\backslash\)
+                                              SET\_BIT(AFIO->MAPR, AFIO\_MAPR\_USART3\_REMAP\_PARTIALREMAP); \(\backslash\)
+                                            \}\textcolor{keywordflow}{while}(0U)
+\end{DoxyCode}
+
+
+Enable the remapping of U\+S\+A\+R\+T3 alternate function C\+TS, R\+TS, CK, TX and RX. 
+
+\begin{DoxyNote}{Note}
+P\+A\+R\+T\+I\+AL\+: Partial remap (T\+X/\+P\+C10, R\+X/\+P\+C11, C\+K/\+P\+C12, C\+T\+S/\+P\+B13, R\+T\+S/\+P\+B14) 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 208 of file stm32f1xx\+\_\+hal\+\_\+gpio\+\_\+ex.\+h.
+

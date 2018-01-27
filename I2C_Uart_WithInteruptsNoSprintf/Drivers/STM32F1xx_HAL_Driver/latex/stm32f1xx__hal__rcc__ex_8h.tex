@@ -1,0 +1,130 @@
+\hypertarget{stm32f1xx__hal__rcc__ex_8h}{}\section{Inc/stm32f1xx\+\_\+hal\+\_\+rcc\+\_\+ex.h File Reference}
+\label{stm32f1xx__hal__rcc__ex_8h}\index{Inc/stm32f1xx\+\_\+hal\+\_\+rcc\+\_\+ex.\+h@{Inc/stm32f1xx\+\_\+hal\+\_\+rcc\+\_\+ex.\+h}}
+
+
+Header file of R\+CC H\+AL Extension module.  
+
+
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_r_c_c___osc_init_type_def}{R\+C\+C\+\_\+\+Osc\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em R\+CC Internal/\+External Oscillator (H\+SE, H\+SI, L\+SE and L\+SI) configuration structure definition. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{R\+C\+C\+\_\+\+Periph\+C\+L\+K\+Init\+Type\+Def}
+\begin{DoxyCompactList}\small\item\em R\+CC extended clocks structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries C\+R\+\_\+\+R\+E\+G\+\_\+\+I\+N\+D\+EX}~((uint8\+\_\+t)1)
+\item 
+\#define {\bfseries I\+S\+\_\+\+R\+C\+C\+\_\+\+H\+S\+E\+\_\+\+P\+R\+E\+D\+IV}(\+\_\+\+\_\+\+D\+I\+V\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+D\+I\+V\+\_\+\+\_\+) == R\+C\+C\+\_\+\+H\+S\+E\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+\+D\+I\+V1)  $\vert$$\vert$ ((\+\_\+\+\_\+\+D\+I\+V\+\_\+\+\_\+) == R\+C\+C\+\_\+\+H\+S\+E\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+\+D\+I\+V2))
+\item 
+\#define {\bfseries I\+S\+\_\+\+R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+UL}(\+\_\+\+\_\+\+M\+U\+L\+\_\+\+\_\+)
+\item 
+\#define {\bfseries I\+S\+\_\+\+R\+C\+C\+\_\+\+M\+C\+O1\+S\+O\+U\+R\+CE}(\+\_\+\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)
+\item 
+\#define {\bfseries I\+S\+\_\+\+R\+C\+C\+\_\+\+A\+D\+C\+P\+L\+L\+C\+L\+K\+\_\+\+D\+IV}(\+\_\+\+\_\+\+A\+D\+C\+C\+L\+K\+\_\+\+\_\+)
+\item 
+\#define {\bfseries I\+S\+\_\+\+R\+C\+C\+\_\+\+P\+E\+R\+I\+P\+H\+C\+L\+O\+CK}(\+\_\+\+\_\+\+S\+E\+L\+E\+C\+T\+I\+O\+N\+\_\+\+\_\+)
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+E\+R\+I\+P\+H\+C\+L\+K\+\_\+\+R\+TC}~0x00000001U
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+E\+R\+I\+P\+H\+C\+L\+K\+\_\+\+A\+DC}~0x00000002U
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V2}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+A\+D\+C\+P\+R\+E\+\_\+\+D\+I\+V2
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V4}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+A\+D\+C\+P\+R\+E\+\_\+\+D\+I\+V4
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V6}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+A\+D\+C\+P\+R\+E\+\_\+\+D\+I\+V6
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V8}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+A\+D\+C\+P\+R\+E\+\_\+\+D\+I\+V8
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+H\+S\+E\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+\+D\+I\+V1}~0x00000000U
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+H\+S\+E\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+\+D\+I\+V2}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+X\+T\+P\+RE
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L2}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L2
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L3}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L3
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L4}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L4
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L5}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L5
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L6}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L6
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L7}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L7
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L8}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L8
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L9}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L9
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L10}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L10
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L11}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L11
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L12}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L12
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L13}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L13
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L14}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L14
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L15}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L15
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+P\+L\+L\+\_\+\+M\+U\+L16}~R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+M\+U\+L\+L16
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+M\+C\+O1\+S\+O\+U\+R\+C\+E\+\_\+\+N\+O\+C\+L\+O\+CK}~((uint32\+\_\+t)R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+M\+C\+O\+\_\+\+N\+O\+C\+L\+O\+CK)
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+M\+C\+O1\+S\+O\+U\+R\+C\+E\+\_\+\+S\+Y\+S\+C\+LK}~((uint32\+\_\+t)R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+M\+C\+O\+\_\+\+S\+Y\+S\+C\+LK)
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+M\+C\+O1\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SI}~((uint32\+\_\+t)R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+M\+C\+O\+\_\+\+H\+SI)
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+M\+C\+O1\+S\+O\+U\+R\+C\+E\+\_\+\+H\+SE}~((uint32\+\_\+t)R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+M\+C\+O\+\_\+\+H\+SE)
+\item 
+\#define {\bfseries R\+C\+C\+\_\+\+M\+C\+O1\+S\+O\+U\+R\+C\+E\+\_\+\+P\+L\+L\+C\+LK}~((uint32\+\_\+t)R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+M\+C\+O\+\_\+\+P\+L\+L\+C\+L\+K\+\_\+\+D\+I\+V2)
+\item 
+\#define \hyperlink{group___r_c_c_ex___h_s_e___configuration_gafc6bfe4fd172ea49871172fa137b60e0}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+H\+S\+E\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+\+C\+O\+N\+F\+IG}(\+\_\+\+\_\+\+H\+S\+E\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+\+V\+A\+L\+U\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$C\+F\+GR,R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+X\+T\+P\+RE, (uint32\+\_\+t)(\+\_\+\+\_\+\+H\+S\+E\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+\+V\+A\+L\+U\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the External High Speed oscillator (H\+SE) Predivision factor for P\+LL. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_c_c_ex___h_s_e___configuration_ga33799456f6dcbcdb9e66374277083d4c}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+H\+S\+E\+\_\+\+G\+E\+T\+\_\+\+P\+R\+E\+D\+IV}()~R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$C\+F\+GR, R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+P\+L\+L\+X\+T\+P\+RE)
+\begin{DoxyCompactList}\small\item\em Macro to get prediv1 factor for P\+LL. \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_c_c_ex___peripheral___configuration_ga4c75b81d1b7d65cda934c9f1350ea97b}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+A\+D\+C\+\_\+\+C\+O\+N\+F\+IG}(\+\_\+\+\_\+\+A\+D\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$C\+F\+GR, R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+A\+D\+C\+P\+RE, (uint32\+\_\+t)(\+\_\+\+\_\+\+A\+D\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the A\+D\+Cx clock (x=1 to 3 depending on devices). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_c_c_ex___peripheral___configuration_ga2ee9f1838a8450f949b548a06ed3bc58}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+A\+D\+C\+\_\+\+S\+O\+U\+R\+CE}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$C\+F\+GR, R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+A\+D\+C\+P\+RE)))
+\begin{DoxyCompactList}\small\item\em Macro to get the A\+DC clock (A\+D\+Cx\+C\+LK, x=1 to 3 depending on devices). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{H\+A\+L\+\_\+\+Status\+Type\+Def} {\bfseries H\+A\+L\+\_\+\+R\+C\+C\+Ex\+\_\+\+Periph\+C\+L\+K\+Config} (\hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{R\+C\+C\+\_\+\+Periph\+C\+L\+K\+Init\+Type\+Def} $\ast$Periph\+Clk\+Init)
+\item 
+void {\bfseries H\+A\+L\+\_\+\+R\+C\+C\+Ex\+\_\+\+Get\+Periph\+C\+L\+K\+Config} (\hyperlink{struct_r_c_c___periph_c_l_k_init_type_def}{R\+C\+C\+\_\+\+Periph\+C\+L\+K\+Init\+Type\+Def} $\ast$Periph\+Clk\+Init)
+\item 
+uint32\+\_\+t {\bfseries H\+A\+L\+\_\+\+R\+C\+C\+Ex\+\_\+\+Get\+Periph\+C\+L\+K\+Freq} (uint32\+\_\+t Periph\+Clk)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file of R\+CC H\+AL Extension module. 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+12-\/\+May-\/2017 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+H\+T(c) 2016 S\+T\+Microelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 

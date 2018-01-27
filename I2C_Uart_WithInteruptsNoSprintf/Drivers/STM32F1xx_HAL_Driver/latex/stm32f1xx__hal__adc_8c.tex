@@ -1,0 +1,262 @@
+\hypertarget{stm32f1xx__hal__adc_8c}{}\section{Src/stm32f1xx\+\_\+hal\+\_\+adc.c File Reference}
+\label{stm32f1xx__hal__adc_8c}\index{Src/stm32f1xx\+\_\+hal\+\_\+adc.\+c@{Src/stm32f1xx\+\_\+hal\+\_\+adc.\+c}}
+
+
+This file provides firmware functions to manage the following functionalities of the Analog to Digital Convertor (A\+DC) peripheral\+:  
+
+
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal.\+h\char`\"{}}\newline
+
+
+\subsection{Detailed Description}
+This file provides firmware functions to manage the following functionalities of the Analog to Digital Convertor (A\+DC) peripheral\+: 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+12-\/\+May-\/2017
+\begin{DoxyItemize}
+\item Initialization and de-\/initialization functions ++ Initialization and Configuration of A\+DC
+\item Operation functions ++ Start, stop, get result of conversions of regular group, using 3 possible modes\+: polling, interruption or D\+MA.
+\item Control functions ++ Channels configuration on regular group ++ Channels configuration on injected group ++ Analog Watchdog configuration
+\item State functions ++ A\+DC state machine management ++ Interrupts and flags management Other functions (extended functions) are available in file \char`\"{}stm32f1xx\+\_\+hal\+\_\+adc\+\_\+ex.\+c\char`\"{}.
+\end{DoxyItemize}
+\end{DoxyDate}
+\begin{DoxyVerb}==============================================================================
+                   ##### ADC peripheral features #####
+==============================================================================
+[..]
+(+) 12-bit resolution
+
+(+) Interrupt generation at the end of regular conversion, end of injected
+    conversion, and in case of analog watchdog or overrun events.
+
+(+) Single and continuous conversion modes.
+
+(+) Scan mode for conversion of several channels sequentially.
+
+(+) Data alignment with in-built data coherency.
+
+(+) Programmable sampling time (channel wise)
+
+(+) ADC conversion of regular group and injected group.
+
+(+) External trigger (timer or EXTI) 
+    for both regular and injected groups.
+
+(+) DMA request generation for transfer of conversions data of regular group.
+
+(+) Multimode Dual mode (available on devices with 2 ADCs or more).
+
+(+) Configurable DMA data storage in Multimode Dual mode (available on devices
+    with 2 DCs or more).
+
+(+) Configurable delay between conversions in Dual interleaved mode (available 
+    on devices with 2 DCs or more).
+
+(+) ADC calibration
+
+(+) ADC supply requirements: 2.4 V to 3.6 V at full speed and down to 1.8 V at 
+    slower speed.
+
+(+) ADC input range: from Vref- (connected to Vssa) to Vref+ (connected to 
+    Vdda or to an external voltage reference).
+
+
+                   ##### How to use this driver #####
+==============================================================================
+  [..]
+
+   *** Configuration of top level parameters related to ADC ***
+   ============================================================
+   [..]
+
+  (#) Enable the ADC interface
+    (++) As prerequisite, ADC clock must be configured at RCC top level.
+         Caution: On STM32F1, ADC clock frequency max is 14MHz (refer
+                  to device datasheet).
+                  Therefore, ADC clock prescaler must be configured in 
+                  function of ADC clock source frequency to remain below
+                  this maximum frequency.
+      (++) One clock setting is mandatory:
+           ADC clock (core clock, also possibly conversion clock).
+           (+++) Example:
+                 Into HAL_ADC_MspInit() (recommended code location) or with
+                 other device clock parameters configuration:
+             (+++) RCC_PeriphCLKInitTypeDef  PeriphClkInit;
+             (+++) __ADC1_CLK_ENABLE();
+             (+++) PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
+             (+++) PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV2;
+             (+++) HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit);
+
+  (#) ADC pins configuration
+       (++) Enable the clock for the ADC GPIOs
+            using macro __HAL_RCC_GPIOx_CLK_ENABLE()
+       (++) Configure these ADC pins in analog mode
+            using function HAL_GPIO_Init()
+
+  (#) Optionally, in case of usage of ADC with interruptions:
+       (++) Configure the NVIC for ADC
+            using function HAL_NVIC_EnableIRQ(ADCx_IRQn)
+       (++) Insert the ADC interruption handler function HAL_ADC_IRQHandler() 
+            into the function of corresponding ADC interruption vector 
+            ADCx_IRQHandler().
+
+  (#) Optionally, in case of usage of DMA:
+       (++) Configure the DMA (DMA channel, mode normal or circular, ...)
+            using function HAL_DMA_Init().
+       (++) Configure the NVIC for DMA
+            using function HAL_NVIC_EnableIRQ(DMAx_Channelx_IRQn)
+       (++) Insert the ADC interruption handler function HAL_ADC_IRQHandler() 
+            into the function of corresponding DMA interruption vector 
+            DMAx_Channelx_IRQHandler().
+
+   *** Configuration of ADC, groups regular/injected, channels parameters ***
+   ==========================================================================
+   [..]
+
+  (#) Configure the ADC parameters (resolution, data alignment, ...)
+      and regular group parameters (conversion trigger, sequencer, ...)
+      using function HAL_ADC_Init().
+
+  (#) Configure the channels for regular group parameters (channel number, 
+      channel rank into sequencer, ..., into regular group)
+      using function HAL_ADC_ConfigChannel().
+
+  (#) Optionally, configure the injected group parameters (conversion trigger, 
+      sequencer, ..., of injected group)
+      and the channels for injected group parameters (channel number, 
+      channel rank into sequencer, ..., into injected group)
+      using function HAL_ADCEx_InjectedConfigChannel().
+
+  (#) Optionally, configure the analog watchdog parameters (channels
+      monitored, thresholds, ...)
+      using function HAL_ADC_AnalogWDGConfig().
+
+  (#) Optionally, for devices with several ADC instances: configure the 
+      multimode parameters
+      using function HAL_ADCEx_MultiModeConfigChannel().
+
+   *** Execution of ADC conversions ***
+   ====================================
+   [..]
+
+  (#) Optionally, perform an automatic ADC calibration to improve the
+      conversion accuracy
+      using function HAL_ADCEx_Calibration_Start().
+
+  (#) ADC driver can be used among three modes: polling, interruption,
+      transfer by DMA.
+
+      (++) ADC conversion by polling:
+        (+++) Activate the ADC peripheral and start conversions
+              using function HAL_ADC_Start()
+        (+++) Wait for ADC conversion completion 
+              using function HAL_ADC_PollForConversion()
+              (or for injected group: HAL_ADCEx_InjectedPollForConversion() )
+        (+++) Retrieve conversion results 
+              using function HAL_ADC_GetValue()
+              (or for injected group: HAL_ADCEx_InjectedGetValue() )
+        (+++) Stop conversion and disable the ADC peripheral 
+              using function HAL_ADC_Stop()
+
+      (++) ADC conversion by interruption: 
+        (+++) Activate the ADC peripheral and start conversions
+              using function HAL_ADC_Start_IT()
+        (+++) Wait for ADC conversion completion by call of function
+              HAL_ADC_ConvCpltCallback()
+              (this function must be implemented in user program)
+              (or for injected group: HAL_ADCEx_InjectedConvCpltCallback() )
+        (+++) Retrieve conversion results 
+              using function HAL_ADC_GetValue()
+              (or for injected group: HAL_ADCEx_InjectedGetValue() )
+        (+++) Stop conversion and disable the ADC peripheral 
+              using function HAL_ADC_Stop_IT()
+
+      (++) ADC conversion with transfer by DMA:
+        (+++) Activate the ADC peripheral and start conversions
+              using function HAL_ADC_Start_DMA()
+        (+++) Wait for ADC conversion completion by call of function
+              HAL_ADC_ConvCpltCallback() or HAL_ADC_ConvHalfCpltCallback()
+              (these functions must be implemented in user program)
+        (+++) Conversion results are automatically transferred by DMA into
+              destination variable address.
+        (+++) Stop conversion and disable the ADC peripheral 
+              using function HAL_ADC_Stop_DMA()
+
+      (++) For devices with several ADCs: ADC multimode conversion 
+           with transfer by DMA:
+        (+++) Activate the ADC peripheral (slave) and start conversions
+              using function HAL_ADC_Start()
+        (+++) Activate the ADC peripheral (master) and start conversions
+              using function HAL_ADCEx_MultiModeStart_DMA()
+        (+++) Wait for ADC conversion completion by call of function
+              HAL_ADC_ConvCpltCallback() or HAL_ADC_ConvHalfCpltCallback()
+              (these functions must be implemented in user program)
+        (+++) Conversion results are automatically transferred by DMA into
+              destination variable address.
+        (+++) Stop conversion and disable the ADC peripheral (master)
+              using function HAL_ADCEx_MultiModeStop_DMA()
+        (+++) Stop conversion and disable the ADC peripheral (slave)
+              using function HAL_ADC_Stop_IT()
+
+   [..]
+
+  (@) Callback functions must be implemented in user program:
+    (+@) HAL_ADC_ErrorCallback()
+    (+@) HAL_ADC_LevelOutOfWindowCallback() (callback of analog watchdog)
+    (+@) HAL_ADC_ConvCpltCallback()
+    (+@) HAL_ADC_ConvHalfCpltCallback
+    (+@) HAL_ADCEx_InjectedConvCpltCallback()
+
+   *** Deinitialization of ADC ***
+   ============================================================
+   [..]
+
+  (#) Disable the ADC interface
+    (++) ADC clock can be hard reset and disabled at RCC top level.
+      (++) Hard reset of ADC peripherals
+           using macro __ADCx_FORCE_RESET(), __ADCx_RELEASE_RESET().
+      (++) ADC clock disable
+           using the equivalent macro/functions as configuration step.
+           (+++) Example:
+                 Into HAL_ADC_MspDeInit() (recommended code location) or with
+                 other device clock parameters configuration:
+             (+++) PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC
+             (+++) PeriphClkInit.AdcClockSelection = RCC_ADCPLLCLK2_OFF
+             (+++) HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit)
+
+  (#) ADC pins configuration
+       (++) Disable the clock for the ADC GPIOs
+            using macro __HAL_RCC_GPIOx_CLK_DISABLE()
+
+  (#) Optionally, in case of usage of ADC with interruptions:
+       (++) Disable the NVIC for ADC
+            using function HAL_NVIC_EnableIRQ(ADCx_IRQn)
+
+  (#) Optionally, in case of usage of DMA:
+       (++) Deinitialize the DMA
+            using function HAL_DMA_Init().
+       (++) Disable the NVIC for DMA
+            using function HAL_NVIC_EnableIRQ(DMAx_Channelx_IRQn)
+
+  [..]\end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+H\+T(c) 2016 S\+T\+Microelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 

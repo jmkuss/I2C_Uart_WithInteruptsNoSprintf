@@ -1,0 +1,138 @@
+\hypertarget{group___d_m_a___private___macros}{}\section{D\+MA Private Macros}
+\label{group___d_m_a___private___macros}\index{D\+M\+A Private Macros@{D\+M\+A Private Macros}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+M\+A\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON}(D\+I\+R\+E\+C\+T\+I\+ON)
+\item 
+\mbox{\Hypertarget{group___d_m_a___private___macros_ga72ef4033bb3bc2cdfdbe579083b05e32}\label{group___d_m_a___private___macros_ga72ef4033bb3bc2cdfdbe579083b05e32}} 
+\#define {\bfseries I\+S\+\_\+\+D\+M\+A\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}(S\+I\+ZE)~(((S\+I\+ZE) $>$= 0x1\+U) \&\& ((\+S\+I\+Z\+E) $<$ 0x10000\+U))
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE}(S\+T\+A\+TE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE}(S\+T\+A\+TE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}(S\+I\+ZE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}(S\+I\+ZE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+O\+DE}(M\+O\+DE)
+\item 
+\#define {\bfseries I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+R\+I\+O\+R\+I\+TY}(P\+R\+I\+O\+R\+I\+TY)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___d_m_a___private___macros_gae2b02e8e823854bcd7c5746cdd29e70d}\label{group___d_m_a___private___macros_gae2b02e8e823854bcd7c5746cdd29e70d}} 
+\index{D\+M\+A Private Macros@{D\+M\+A Private Macros}!I\+S\+\_\+\+D\+M\+A\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON@{I\+S\+\_\+\+D\+M\+A\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON}}
+\index{I\+S\+\_\+\+D\+M\+A\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON@{I\+S\+\_\+\+D\+M\+A\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON}!D\+M\+A Private Macros@{D\+M\+A Private Macros}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+\+D\+M\+A\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON}{IS\_DMA\_DIRECTION}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+D\+M\+A\+\_\+\+D\+I\+R\+E\+C\+T\+I\+ON(\begin{DoxyParamCaption}\item[{}]{D\+I\+R\+E\+C\+T\+I\+ON }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((DIRECTION) == \hyperlink{group___d_m_a___data__transfer__direction_gacb2cbf03ecae6804ae4a6f60a3e37c12}{DMA\_PERIPH\_TO\_MEMORY} ) || \(\backslash\)
+                                     ((DIRECTION) == \hyperlink{group___d_m_a___data__transfer__direction_ga9e76fc559a2d5c766c969e6e921b1ee9}{DMA\_MEMORY\_TO\_PERIPH})  || \(\backslash\)
+                                     ((DIRECTION) == \hyperlink{group___d_m_a___data__transfer__direction_ga0695035d725855ccf64d2d8452a33810}{DMA\_MEMORY\_TO\_MEMORY}))
+\end{DoxyCode}
+
+
+Definition at line 427 of file stm32f1xx\+\_\+hal\+\_\+dma.\+h.
+
+\mbox{\Hypertarget{group___d_m_a___private___macros_gac9e3748cebcb16d4ae4206d562bc804c}\label{group___d_m_a___private___macros_gac9e3748cebcb16d4ae4206d562bc804c}} 
+\index{D\+M\+A Private Macros@{D\+M\+A Private Macros}!I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE@{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}}
+\index{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE@{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}!D\+M\+A Private Macros@{D\+M\+A Private Macros}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}{IS\_DMA\_MEMORY\_DATA\_SIZE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE(\begin{DoxyParamCaption}\item[{}]{S\+I\+ZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((SIZE) == \hyperlink{group___d_m_a___memory__data__size_ga9ed07bddf736298eba11508382ea4d51}{DMA\_MDATAALIGN\_BYTE})     || \(\backslash\)
+                                       ((SIZE) == \hyperlink{group___d_m_a___memory__data__size_ga2c7355971c0da34a7ffe50ec87403071}{DMA\_MDATAALIGN\_HALFWORD}) || \(\backslash\)
+                                       ((SIZE) == \hyperlink{group___d_m_a___memory__data__size_ga8812da819f18c873249074f3920220b2}{DMA\_MDATAALIGN\_WORD} ))
+\end{DoxyCode}
+
+
+Definition at line 443 of file stm32f1xx\+\_\+hal\+\_\+dma.\+h.
+
+\mbox{\Hypertarget{group___d_m_a___private___macros_gaa880f39d499d1e80449cf80381e4eb67}\label{group___d_m_a___private___macros_gaa880f39d499d1e80449cf80381e4eb67}} 
+\index{D\+M\+A Private Macros@{D\+M\+A Private Macros}!I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE@{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE}}
+\index{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE@{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE}!D\+M\+A Private Macros@{D\+M\+A Private Macros}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE}{IS\_DMA\_MEMORY\_INC\_STATE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+E\+M\+O\+R\+Y\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE(\begin{DoxyParamCaption}\item[{}]{S\+T\+A\+TE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((STATE) == \hyperlink{group___d_m_a___memory__incremented__mode_ga43d30885699cc8378562316ff4fed1cd}{DMA\_MINC\_ENABLE})  || \(\backslash\)
+                                        ((STATE) == \hyperlink{group___d_m_a___memory__incremented__mode_ga32625330516c188151743473fad97a33}{DMA\_MINC\_DISABLE}))
+\end{DoxyCode}
+
+
+Definition at line 436 of file stm32f1xx\+\_\+hal\+\_\+dma.\+h.
+
+\mbox{\Hypertarget{group___d_m_a___private___macros_gad88ee5030574d6a573904378fb62c7ac}\label{group___d_m_a___private___macros_gad88ee5030574d6a573904378fb62c7ac}} 
+\index{D\+M\+A Private Macros@{D\+M\+A Private Macros}!I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+O\+DE@{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+O\+DE}}
+\index{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+O\+DE@{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+O\+DE}!D\+M\+A Private Macros@{D\+M\+A Private Macros}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+O\+DE}{IS\_DMA\_MODE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+D\+M\+A\+\_\+\+M\+O\+DE(\begin{DoxyParamCaption}\item[{}]{M\+O\+DE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((MODE) == \hyperlink{group___d_m_a__mode_ga04941acfbbdefc53e1e08133cffa3b8a}{DMA\_NORMAL} )  || \(\backslash\)
+                           ((MODE) == \hyperlink{group___d_m_a__mode_ga4c4f425cba13edffb3c831c036c91e01}{DMA\_CIRCULAR}))
+\end{DoxyCode}
+
+
+Definition at line 447 of file stm32f1xx\+\_\+hal\+\_\+dma.\+h.
+
+\mbox{\Hypertarget{group___d_m_a___private___macros_gad7916e0ae55cdf5efdfa68a09a028037}\label{group___d_m_a___private___macros_gad7916e0ae55cdf5efdfa68a09a028037}} 
+\index{D\+M\+A Private Macros@{D\+M\+A Private Macros}!I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE@{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}}
+\index{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE@{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}!D\+M\+A Private Macros@{D\+M\+A Private Macros}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}{IS\_DMA\_PERIPHERAL\_DATA\_SIZE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE(\begin{DoxyParamCaption}\item[{}]{S\+I\+ZE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((SIZE) == \hyperlink{group___d_m_a___peripheral__data__size_ga55b8c8f5ec95f10d26d6c5b1c9136730}{DMA\_PDATAALIGN\_BYTE})     || \(\backslash\)
+                                           ((SIZE) == \hyperlink{group___d_m_a___peripheral__data__size_gac08bfd907442dba5358830b247135bcc}{DMA\_PDATAALIGN\_HALFWORD}) || \(\backslash\)
+                                           ((SIZE) == \hyperlink{group___d_m_a___peripheral__data__size_gaad50e97cbc4a726660db9c3f42ac93b0}{DMA\_PDATAALIGN\_WORD}))
+\end{DoxyCode}
+
+
+Definition at line 439 of file stm32f1xx\+\_\+hal\+\_\+dma.\+h.
+
+\mbox{\Hypertarget{group___d_m_a___private___macros_ga28762105b3f567c16ba79a47e68ff0fa}\label{group___d_m_a___private___macros_ga28762105b3f567c16ba79a47e68ff0fa}} 
+\index{D\+M\+A Private Macros@{D\+M\+A Private Macros}!I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE@{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE}}
+\index{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE@{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE}!D\+M\+A Private Macros@{D\+M\+A Private Macros}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE}{IS\_DMA\_PERIPHERAL\_INC\_STATE}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+E\+R\+I\+P\+H\+E\+R\+A\+L\+\_\+\+I\+N\+C\+\_\+\+S\+T\+A\+TE(\begin{DoxyParamCaption}\item[{}]{S\+T\+A\+TE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((STATE) == \hyperlink{group___d_m_a___peripheral__incremented__mode_gab6d84e5805302516d26c06fb4497a346}{DMA\_PINC\_ENABLE}) || \(\backslash\)
+                                            ((STATE) == \hyperlink{group___d_m_a___peripheral__incremented__mode_ga63e2aff2973d1a8f01d5d7b6e4894f39}{DMA\_PINC\_DISABLE}))
+\end{DoxyCode}
+
+
+Definition at line 433 of file stm32f1xx\+\_\+hal\+\_\+dma.\+h.
+
+\mbox{\Hypertarget{group___d_m_a___private___macros_gaa1cae2ab458948511596467c87cd02b6}\label{group___d_m_a___private___macros_gaa1cae2ab458948511596467c87cd02b6}} 
+\index{D\+M\+A Private Macros@{D\+M\+A Private Macros}!I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
+\index{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+R\+I\+O\+R\+I\+TY}!D\+M\+A Private Macros@{D\+M\+A Private Macros}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+R\+I\+O\+R\+I\+TY}{IS\_DMA\_PRIORITY}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+\+D\+M\+A\+\_\+\+P\+R\+I\+O\+R\+I\+TY(\begin{DoxyParamCaption}\item[{}]{P\+R\+I\+O\+R\+I\+TY }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+(((PRIORITY) == \hyperlink{group___d_m_a___priority__level_ga0d1ed2bc9229ba3c953002bcf3a72130}{DMA\_PRIORITY\_LOW} )   || \(\backslash\)
+                                   ((PRIORITY) == \hyperlink{group___d_m_a___priority__level_gad6fbeee76fd4a02cbed64365bb4c1781}{DMA\_PRIORITY\_MEDIUM}) || \(\backslash\)
+                                   ((PRIORITY) == \hyperlink{group___d_m_a___priority__level_ga6b2f5c5e22895f8b4bd52a27ec6cae2a}{DMA\_PRIORITY\_HIGH})   || \(\backslash\)
+                                   ((PRIORITY) == \hyperlink{group___d_m_a___priority__level_gaed0542331a4d875d1d8d5b2878e9372c}{DMA\_PRIORITY\_VERY\_HIGH}))
+\end{DoxyCode}
+
+
+Definition at line 450 of file stm32f1xx\+\_\+hal\+\_\+dma.\+h.
+

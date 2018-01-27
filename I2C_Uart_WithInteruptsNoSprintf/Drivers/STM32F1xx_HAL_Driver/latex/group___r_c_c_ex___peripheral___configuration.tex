@@ -1,0 +1,64 @@
+\hypertarget{group___r_c_c_ex___peripheral___configuration}{}\section{Peripheral Configuration}
+\label{group___r_c_c_ex___peripheral___configuration}\index{Peripheral Configuration@{Peripheral Configuration}}
+
+
+Macros to configure clock source of different peripherals.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group___r_c_c_ex___peripheral___configuration_ga4c75b81d1b7d65cda934c9f1350ea97b}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+A\+D\+C\+\_\+\+C\+O\+N\+F\+IG}(\+\_\+\+\_\+\+A\+D\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+)~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$C\+F\+GR, R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+A\+D\+C\+P\+RE, (uint32\+\_\+t)(\+\_\+\+\_\+\+A\+D\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Macro to configure the A\+D\+Cx clock (x=1 to 3 depending on devices). \end{DoxyCompactList}\item 
+\#define \hyperlink{group___r_c_c_ex___peripheral___configuration_ga2ee9f1838a8450f949b548a06ed3bc58}{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+A\+D\+C\+\_\+\+S\+O\+U\+R\+CE}()~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$C\+F\+GR, R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+A\+D\+C\+P\+RE)))
+\begin{DoxyCompactList}\small\item\em Macro to get the A\+DC clock (A\+D\+Cx\+C\+LK, x=1 to 3 depending on devices). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Macros to configure clock source of different peripherals. 
+
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_c_c_ex___peripheral___configuration_ga4c75b81d1b7d65cda934c9f1350ea97b}\label{group___r_c_c_ex___peripheral___configuration_ga4c75b81d1b7d65cda934c9f1350ea97b}} 
+\index{Peripheral Configuration@{Peripheral Configuration}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+A\+D\+C\+\_\+\+C\+O\+N\+F\+IG@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+A\+D\+C\+\_\+\+C\+O\+N\+F\+IG}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+A\+D\+C\+\_\+\+C\+O\+N\+F\+IG@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+A\+D\+C\+\_\+\+C\+O\+N\+F\+IG}!Peripheral Configuration@{Peripheral Configuration}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+A\+D\+C\+\_\+\+C\+O\+N\+F\+IG}{\_\_HAL\_RCC\_ADC\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+A\+D\+C\+\_\+\+C\+O\+N\+F\+IG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+A\+D\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+ }\end{DoxyParamCaption})~M\+O\+D\+I\+F\+Y\+\_\+\+R\+EG(R\+CC-\/$>$C\+F\+GR, R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+A\+D\+C\+P\+RE, (uint32\+\_\+t)(\+\_\+\+\_\+\+A\+D\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+\_\+))}
+
+
+
+Macro to configure the A\+D\+Cx clock (x=1 to 3 depending on devices). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+A\+D\+C\+C\+L\+K\+S\+O\+U\+R\+C\+E$<$/strong$>$} & specifies the A\+DC clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V2 P\+C\+L\+K2 clock divided by 2 selected as A\+DC clock \item R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V4 P\+C\+L\+K2 clock divided by 4 selected as A\+DC clock \item R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V6 P\+C\+L\+K2 clock divided by 6 selected as A\+DC clock \item R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V8 P\+C\+L\+K2 clock divided by 8 selected as A\+DC clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1739 of file stm32f1xx\+\_\+hal\+\_\+rcc\+\_\+ex.\+h.
+
+\mbox{\Hypertarget{group___r_c_c_ex___peripheral___configuration_ga2ee9f1838a8450f949b548a06ed3bc58}\label{group___r_c_c_ex___peripheral___configuration_ga2ee9f1838a8450f949b548a06ed3bc58}} 
+\index{Peripheral Configuration@{Peripheral Configuration}!\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+A\+D\+C\+\_\+\+S\+O\+U\+R\+CE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+A\+D\+C\+\_\+\+S\+O\+U\+R\+CE}}
+\index{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+A\+D\+C\+\_\+\+S\+O\+U\+R\+CE@{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+A\+D\+C\+\_\+\+S\+O\+U\+R\+CE}!Peripheral Configuration@{Peripheral Configuration}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+A\+D\+C\+\_\+\+S\+O\+U\+R\+CE}{\_\_HAL\_RCC\_GET\_ADC\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+H\+A\+L\+\_\+\+R\+C\+C\+\_\+\+G\+E\+T\+\_\+\+A\+D\+C\+\_\+\+S\+O\+U\+R\+CE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(R\+E\+A\+D\+\_\+\+B\+IT(R\+CC-\/$>$C\+F\+GR, R\+C\+C\+\_\+\+C\+F\+G\+R\+\_\+\+A\+D\+C\+P\+RE)))}
+
+
+
+Macro to get the A\+DC clock (A\+D\+Cx\+C\+LK, x=1 to 3 depending on devices). 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source can be one of the following values\+: \begin{DoxyItemize}
+\item R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V2 P\+C\+L\+K2 clock divided by 2 selected as A\+DC clock \item R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V4 P\+C\+L\+K2 clock divided by 4 selected as A\+DC clock \item R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V6 P\+C\+L\+K2 clock divided by 6 selected as A\+DC clock \item R\+C\+C\+\_\+\+A\+D\+C\+P\+C\+L\+K2\+\_\+\+D\+I\+V8 P\+C\+L\+K2 clock divided by 8 selected as A\+DC clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 1749 of file stm32f1xx\+\_\+hal\+\_\+rcc\+\_\+ex.\+h.
+

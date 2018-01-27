@@ -1,0 +1,19 @@
+Notes on sprintf and other
+
+
+strcspn             => string.h, in C standard libaray,                     // Get number of chars before delimiter, returns full strlen if delimiter not seen. 
+strlen              => string.h,                                            // Get length of string
+strtoul             => stdlib.h,                                            // convert string to unsigned long, "stringToBinary"
+
+sprintf             => stdio.h,                                             // Used to convert a uint32_t (4 byte unsigned) into a hex string
+                                                                            // That should look like this: "0xA5A5A5A5", as a nice example,
+                                                                            // As a string this will take 11 chars to include the null char at end.
+                                                                            // As a crude replacement for sprintf, just allowing one injected strHex,
+                                                                            // we would need b4String, u32ValueToBeConverted, afterStr.
+                                                                            //
+                                                                            // Or could just write a basic function to convert 32ValueToBeConverted,
+                                                                            // and then use "strcat" or equivalent home brew function, as needed.
+                                                                            
+So we will create some string utilities that sub for these:
+
+suStringToU32 

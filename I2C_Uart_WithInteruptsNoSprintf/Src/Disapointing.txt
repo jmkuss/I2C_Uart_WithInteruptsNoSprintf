@@ -1,0 +1,12 @@
+
+
+Print size information - I2C_Uart_WithInterupts.
+   text	   data	    bss	    dec	    hex	filename
+  52908	    736	   2620	  56264	   dbc8	I2C_Uart_WithInterupts.elf
+Print size information done
+
+Print size information - I2C_Uart_WithInteruptsNoSprintf
+   text	   data	    bss	    dec	    hex	filename
+  51852	    736	   2616	  55204	   d7a4	I2C_Uart_WithInteruptsNoSprintf.elf
+Print size information done
+
