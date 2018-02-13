@@ -347,7 +347,10 @@ bool getU8Index(uint8_t *numberPtr, char *strPtr)
 }
 
 
-
+// The received bytes are picked up by ISR, and handled by the callback
+// routine "HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)", in uart_jmk.c
+// This routine will flag "Transfer_cplt" which occurs every time terminal
+// sends a CR 0x0D charactor.
 
 
 void cmdHandler(char * cmdStr)
