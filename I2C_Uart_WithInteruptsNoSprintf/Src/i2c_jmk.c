@@ -1,17 +1,23 @@
 /**
-  ******************************************************************************
-  * File Name          : I2C_jmk.c
-  * Description        : This file provides jmk designed functions to utilize
-  *                      HAL I2C functionality.
-  ******************************************************************************
-  *
-  ******************************************************************************
-  */
+  @file I2C_jmk.c
+  @brief : Wrapper functions to utilize and build upon HAL I2C functionality.
+<pre>
+	 Note: Some of these may not presently be utilized.
+	       Wrapper function names may improve understanding the intention of the code.
+	       Wrapper functions reduce the number input parameters to make code more specific to
+	       a particular intention.
+
+</pre>
+
+   @author 	Joe Kuss (JMK)
+   @date 	2/16/2018
+
+   \pagebreak
+*/
 
 /* Includes ------------------------------------------------------------------*/
 #include <i2c_jmk.h>
 #include "led.h"
-
 
 #define SIZE_OF_ONE_BYTE	1
 #define TIMEOUT_100MS		100
@@ -19,41 +25,78 @@
 HAL_StatusTypeDef I2CWriteStatus;
 I2C_HandleTypeDef hi2c2;
 
-// Routines writen by Joe Kuss:==================================================================
+/**
+ *  Wrapper for writing 1 byte via I2C.
+ */
 void I2C_WriteOneByte(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t Data)
 {
-
-//	HAL_StatusTypeDef I2CWriteStatus;
-	//##### Was
-	//I2CWriteStatus = HAL_I2C_Master_Transmit(&hi2c2, DevAddress, &Data, (uint16_t) SIZE_OF_ONE_BYTE, (uint32_t)TIMEOUT_100MS);
-	// More properly:
 	I2CWriteStatus = HAL_I2C_Master_Transmit(hi2c, DevAddress, &Data, (uint16_t) SIZE_OF_ONE_BYTE, (uint32_t)TIMEOUT_100MS);
 }
 
+/**
+ *  Wrapper for writing multple bytes via I2C.
+ */
 void I2C_WriteBytes(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size)
 {
-
 	I2CWriteStatus = HAL_I2C_Master_Transmit(hi2c, DevAddress, pData, Size, (uint32_t)TIMEOUT_100MS);
-
 }
 
+/**
+ *  Wrapper for reading one byte via I2C.
+ */
 void I2C_ReadOneByte(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t Data)
 {
-
 	I2CWriteStatus = HAL_I2C_Master_Receive(hi2c, DevAddress, &Data, (uint16_t) SIZE_OF_ONE_BYTE, (uint32_t)TIMEOUT_100MS);
-
 }
 
-void I2C_ReadBytes(I2C_HandleTypeDef *hi2c, uint16_t DevAddress,uint8_t *pData, uint16_t Size ){
-
+/**
+ *  Wrapper for reading multiple bytes via I2C.
+ */
+void I2C_ReadBytes(I2C_HandleTypeDef *hi2c, uint16_t DevAddress,uint8_t *pData, uint16_t Size )
+{
 	I2CWriteStatus = HAL_I2C_Master_Receive(hi2c, DevAddress, pData, Size, (uint32_t)TIMEOUT_100MS);
-
 }
 
-//##############################################################
-// Although the above routines do what they say they are going to do,
-// What they do is not what the PIC board demo "EEprom" simulator
-// requires. So for use with simulator on PIC these are needed:
+
+/**
+  * @brief  Returns the selected Button state, for button specified.
+  * This function designed to allow multiple ports and pins, for multiple buttons.
+  * @param  Button: Specifies the Button to be checked.
+  * Presently there is only one choice for this enumeration.
+  * @arg BUTTON_USER: USER Blue Push Button
+  * @retval The Button GPIO pin value.
+  */
+
+/**
+  * @brief  Returns pressed state of the blue "User" push button.
+  * This function is specific for blue button on STM VL discovery board.
+  * @param  Void - no parameter required.
+  * @retval true - when blue button activated (pressed).
+  */
+
+/**
+ *  @brief Read one or more bytes starting at selected address
+ *  <pre>
+ *  This routine is designed to work as the I2C master to a
+ *  PicMPLabExpress_16F15376 demo board programmed to be a slave
+ *  "EEprom" simulator
+ *
+ *
+ *  </pre>
+ *
+ * @param *hi2c 		Pointer to structure "I2C_HandleTypeDef".
+ * @param DevAddress 	Value holding configured PIC I2C address ###...
+ * @param EEaddress		Random address for start of simulated eeprom.
+ * @param pByteBuffer   Pointer to buffer inside STM32 to hold bytes read.
+ * @param bufferLength	Number of bytes requested to be read ####.
+ *
+ *
+ * *
+ */
+// Although the "I2C Read and Write" routines do what they say they are going to do,
+// This is not what is required for the STM32VLDISCOVERY  to be the Master
+// I2C controller for the slave PicMPLabExpress_16F15376 PIC board demo "EEprom" simulator
+// So reading bytes from the PIC 16F15376are needed:
 
 /*
  *		Requirements:

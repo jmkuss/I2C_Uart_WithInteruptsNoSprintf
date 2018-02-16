@@ -1,25 +1,16 @@
 /**
-  ******************************************************************************
-  * File Name          : flipTheArray.c
-  * Description        : Functions to flip the elements in an array:
-  *                      flipIntArray(..) flips an array of "ints".
-  ******************************************************************************
-*/
-#include "stddef.h"
-
-/****************************************************************************
-	 // Demo for Piper Engineers:
+  @file flipTheArray.c
+  @brief Functions to flip the elements in an array:
+<pre>
 	 // Add to main in order to test:
 
-	  // These arrays for flip integer array demo:
+	 // These arrays for flip integer array demo:
 
-	  static int intArrayEven[] = {1,2,3,4,5,6};
-	  static int intArrayOdd[] = {1,2,3,4,5};
-	  static int intArrayOne[] = {1};
-	  //static int intArrayZero[];          // Compiler does not allow
-	  //static int intArrayZero[] = {};     // Compiler does not allow
-	  static int * intArrayZero;    // is sizeof deref null ptr zero ?
-	                                // no, but it is 1 which also works for us..
+	 static int intArrayEven[] = {1,2,3,4,5,6};
+	 static int intArrayOdd[] = {1,2,3,4,5};
+	 static int intArrayOne[] = {1};
+	 static int * intArrayZero;    // is sizeof deref null ptr zero ?
+	                               // no, but it is 1 which also works for us..
 
 	  //#define NUMBER_OF_ELEMENTS(x)  (sizeof(x) / sizeof((x)[0]))
 
@@ -31,8 +22,28 @@
 	  flipIntArray( intArrayOne, NUMBER_OF_ELEMENTS(intArrayOne ));   // 1
 	  // Flip the 0 element array:
 	  flipIntArray( intArrayZero, NUMBER_OF_ELEMENTS(intArrayZero )); // 0
-****************************************************************************/
+</pre>
 
+   @author 	Joe Kuss (JMK)
+   @date 	2/16/2018
+
+   \pagebreak
+*/
+
+
+#include "stddef.h"
+
+/**
+ * <pre>
+ * Flip the order of an array of integers
+ *
+ * </pre>
+ *
+ * @param pIntArray     Pointer to starting integer in the array.
+ * @param ArraySize 	Size of the array.
+ *
+ *
+ */
 void flipIntArray( int *pIntArray, size_t ArraySize )
 {
      int i,HighElement;
@@ -56,9 +67,20 @@ void flipIntArray( int *pIntArray, size_t ArraySize )
         pIntArray[ArraySize-i-1] = pIntArray[i];
         pIntArray[i] = HighElement;
     }
-  
 }
 
+
+/**
+ * <pre>
+ * Flip the order of an array of characters
+ *
+ * </pre>
+ *
+ * @param pCharArray    Pointer to starting character in the array.
+ * @param ArraySize 	Size of the array.
+ *
+ *
+ */
 void flipCharArray(char * pCharArray, size_t ArraySize)
 {
     int i,HighElement;
@@ -82,6 +104,4 @@ void flipCharArray(char * pCharArray, size_t ArraySize)
        pCharArray[ArraySize-i-1] = pCharArray[i];
        pCharArray[i] = HighElement;
    }
-
-
 }

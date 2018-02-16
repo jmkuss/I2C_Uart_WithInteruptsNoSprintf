@@ -1,8 +1,9 @@
-/*
- * serialCmdParser.h
+/**
+ * @file serialCmdParser.h
+ * @brief Contains declarations/defines for serialCmdParser.c
  *
- *  Created on: Nov 13, 2017
- *      Author: jmk
+ * @author Joe Kuss (JMK)
+ * @date 2/16/2018
  */
 
 #ifndef SERIALCMDPARSER_H_
