@@ -1,8 +1,9 @@
-/*
-  serialCmdParser.c - Serial Command processor
-
+/**
+  @file serialCmdParser.c
+  @brief Serial Command processor
+<pre>
   This is a generic command processor.
-  These commands are kept as as simple as possible, mildly cryptic:
+  These commands are kept as as simple as possible, mildly cryptic,
   but in easily expandable format to allow rapid implementation and
   modification.
 
@@ -27,21 +28,20 @@
   Code m directly reads/writes the address space of the processor,
   (possibly with some restrictions).
 
-
-
   "help y[x]" returns usage page for command y[x].
 
-  h[x] will display sections of complete command set manual.
+  h[x] displays sections of complete command set manual,
+  presently this is only h[1].
+  </pre>
 
-  Author:  	Joe Kuss
-  Date:	    November 13, 2017
+   @author 	Joe Kuss (JMK)
+   @date 	2/14/2018
+
+   \pagebreak
 */
 
-// uint32_t
 
-//#include <stdio.h>
 #include <stdint.h>
-//#include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 #include <ctype.h>
@@ -53,6 +53,7 @@
 
 extern bool Cmd_Recieved;
 
+/// Command Response Codes Enumeration.
 enum commandResponse
 {
 	eOK,
@@ -69,15 +70,15 @@ enum commandResponse
 };
 typedef enum commandResponse eCOMMAND_RESPONSE;
 
+/// Holds latest command response
 eCOMMAND_RESPONSE cmdResponse;
 
 
 #define strEQUALITY 0
 
-//###########################################################################
 // Ref:
 // https://stackoverflow.com/questions/797318/how-to-split-a-string-literal-across-multiple-lines-in-c-objective-c
-
+/// Help page displayed on terminal in response to "h[1]"
 char  * help_1_str = "\r\n"
                 "Help page #1 - Command Interpreter Overview: ----------- \r\n\r\n"
                 "c[x]    - \"Execute Command #x\"       (may include parameters)\r\n"
@@ -99,24 +100,28 @@ char  * help_1_str = "\r\n"
                 "Code m directly reads/writes the address space of the processor,\r\n"
                 "(possibly with some restrictions).\r\n"
                 "------------------------------------------------------------- \r\n\r\n";
-//#################################################################################
 
-
-
-/*
- * bool getDataInputString(char **subString, char * MainString)
+\pagebreak
+/**
+ * <pre>
+ * Scans MainString, and returns pointer to
+ * start of Data section of message via subString.
+ * Data section is delimited by the "=" symbol.
+ * Will return false if can not find data section
+ * (characters) following a single "=".
+ * </pre>
  *
- * Examine MainString,  and fast forward to point to
- * start of Data section of message, after the "=" symbol.
- *
- * Will return false if no "=" symbol in the message,
- * or if have "==" as the symbol...
+ * @param subString 	Points to start of data section.
+ * @param MainString 	Points to start of input string.
+ * @retval 				True if found "=" indicating data.
  *
  */
+// We use char ** because we want to output the result
+// to an external variable that is char*, in order to do
+// this we must use a pointer to char*, thus char**
 bool getDataInputString(char **subString, char * MainString)
 {
 	char * findItPtr;
-	//	char symbolStr[] = "=";
 	size_t strLen1;
 
 	// Get length of substring delimited by "="
@@ -135,8 +140,6 @@ bool getDataInputString(char **subString, char * MainString)
 		findItPtr = NULL;
 	}
 
-	//findItPtr = strpbrk(MainString, symbolStr);
-
 	// Reject for no "="
 	if (findItPtr == NULL)
 	{
@@ -146,36 +149,36 @@ bool getDataInputString(char **subString, char * MainString)
 	}
 	else
 	{
+		// Q: Do this dereference just because variable
+		// was defined as char ** ?
+		// A: No, it is done because we want the parameter
+		//    To of an "out" type that can write to an external
+		//    variable location of type char* from this function.
 		*subString = findItPtr;
 		return true;
 	}
 }
-/*
- * FUNCTION:	bool convStringToUint(uint_32t *uInt32Ptr, char *strPtr)
- *
+
+// FUNCTION:	bool convStringToUint(uint_32t *uInt32Ptr, char *strPtr) ===
+/**
+ * <pre>
  * Convert  string via "strPtr" to  uint_32t if possible.
  * Return false if string is invalid format for uint_32t
  *
  * Numerical value is returned via pointer "uInt32Ptr"
- *
+ *</pre>
  * Will be able to, also, interpret the hex 0x00000 format, and accept
  * 8, 16, and 32 bit hex values
+ *
+ * @param uInt32Ptr 	External location of uint_32t result.
+ * @param strPtr		String to convert, if possible.
+ * @retval 				True if string holds valid uint_32t.
  *
  */
 bool convStringToUint(uint32_t *uInt32Ptr, char *strPtr)
 {
-	unsigned int whiteSpaces;
-
 	unsigned long ulData;		// Note Arm compiler says uint_32t same as ulong.
-
-//	char * originalStrPtr;
-
 	bool   bValidStringConversion;
-
-//	originalStrPtr = strPtr;
-
-	// count any leading white space characters on this data
-	for (whiteSpaces=0; isspace(strPtr[whiteSpaces]); whiteSpaces++);
 
 	//### using "stroul"
 	//ulData = strtoul(strPtr, &strPtr, 0); // "0" = base can be dec,oct or hex, nice !
@@ -196,18 +199,26 @@ bool convStringToUint(uint32_t *uInt32Ptr, char *strPtr)
 	return bValidStringConversion;
 }
 
-/*
- * Function:	bool getU32Index(unsigned int *numberPtr, char *strPtr)
+
+// Function:	bool getU32Index(uint32_t *numberPtr, char *strPtr) ==========
+/**
+ * <pre>
+ * Scan a string and convert the index xxxx located in between
+ * the delimiters [ and ], into a numeric uint32_t.
  *
- * This function examines a command string and return valid index
- * of 0 to 0xFFFFFFFF as found in first instance of [xxxx] in the command string
- * into unsigned int memory pointed to by numberPtr.
+ * This index may be represented as hex: 0x0 to 0xFFFFFFFF or as
+ * an unsigned decimal up to 32 bits.
  *
  * If no index exists or improper numerical format (to large etc)
- * then function will return false..
+ * then function will return false.
+ * </pre>
+ *
+ * @param uInt32Ptr 	External location of uint_32t result.
+ * @param strPtr		String to convert, if possible.
+ * @retval 				True if converted index into valid uint_32t.
  *
  */
-bool getU32Index(uint32_t *numberPtr, char *strPtr)
+bool getU32Index(uint32_t *uInt32Ptr, char *strPtr)
 {
 	char separator1[] = "[";
 	char separator2[] = "]";
@@ -263,7 +274,7 @@ bool getU32Index(uint32_t *numberPtr, char *strPtr)
 				}
 
 
-				*numberPtr = ul;
+				*uInt32Ptr = ul;
 
 				// Restore char where the end of index delimiter is s.b. ']'
 				strPtr[strLen1+strLen2] = savedChar;
@@ -274,7 +285,25 @@ bool getU32Index(uint32_t *numberPtr, char *strPtr)
 	return bValidStringConversion;
 }
 
-bool getU8Index(uint8_t *numberPtr, char *strPtr)
+// Function:	bool getU8Index(uint8_t *uInt8Ptr, char *strPtr) ==========
+/**
+ * <pre>
+ * Scan a string and convert the index xx located in between
+ * the delimiters [ and ], into a numeric uint8_t.
+ *
+ * This index may be represented as hex: 0x0 to 0xFF or as
+ * an unsigned decimal up to 8 bits.
+ *
+ * If no index exists or improper numerical format (to large etc)
+ * then function will return false.
+ * </pre>
+ *
+ * @param uInt8Ptr 		External location of uint_8t result.
+ * @param strPtr		String to convert, if possible.
+ * @retval 				True if converted index into valid uint_8t.
+ *
+ */
+bool getU8Index(uint8_t *uInt8Ptr, char *strPtr)
 {
 	char separator1[] = "[";
 	char separator2[] = "]";
@@ -335,7 +364,7 @@ bool getU8Index(uint8_t *numberPtr, char *strPtr)
 
 				if ((ul <= 255) && (bValidStringConversion == true))
 				{
-					*numberPtr = (uint8_t) ul;
+					*uInt8Ptr = (uint8_t) ul;
 					result = true;
 				}
 				// Restore char where the end of index delimiter is s.b. ']'
@@ -352,12 +381,21 @@ bool getU8Index(uint8_t *numberPtr, char *strPtr)
 // This routine will flag "Transfer_cplt" which occurs every time terminal
 // sends a CR 0x0D charactor.
 
+/**
+ * <pre>
+ * Interpret and execute the latest command string, from the input terminal.
+ * This will also send back the appropriate response for the particular
+ * command.
+ * </pre>
+ *
+ * @param cmdStr		Command string to parse, interpret, execute.
+ *
+ */
 
 void cmdHandler(char * cmdStr)
 {
 	bool	isU8Index;
 	bool	isU32Index;
-
 	bool	isInputDataStr;
 	bool	isUintData;
 
@@ -365,7 +403,6 @@ void cmdHandler(char * cmdStr)
 	unsigned int cmdLength;
 
 	uint32_t 	uIntData;
-
 	uint32_t	index,i;
 
 	char * dataStrPtr;
@@ -377,16 +414,21 @@ void cmdHandler(char * cmdStr)
 
 	strLength = strlen(cmdStr);
 
-	// Get first index included in command string, if it exists:
-	// Normally the index is actually expected < 256
+	/**
+	 * <b>Flow of Control - </b> <br>
+	 * */
+	///
+	/// <pre>Get numerical index in command string "cmd[index]", if it exists:
+	/// Typically the index is expected to be < 256. </pre>
 
 	isU32Index = getU32Index(&index, cmdStr);
 	isU8Index  = ((index <= 255) && (isU32Index == true));
 
 
 
-	// Get the cmdToken max 5 chars.., min 0 chars. ------------
-	// Note: If "[" is not seen then cmdLength will be same as strLength
+	/// <pre>Get the length of cmdToken "cmd" - max 5 chars.., min 0 chars.
+	/// <em>Note: If "[" is not seen then cmdLength will be same as command string
+	/// If length of cmdToken is > 5 we look at only first 5 chars, max.</em> </pre>
 	cmdLength = strcspn(cmdStr, "[");
 
 	if (cmdLength > 5) cmdLength = 5;
@@ -404,22 +446,34 @@ void cmdHandler(char * cmdStr)
 
 	//-----------------------------------------------------------
 
-	// Get dataString pointer to data after single equals sign, if it exists.
+	/// <pre>Get Str pointer for input data after single equals sign, if it exists.
+	/// <em> Example: for d[xxx]=yyyy, we provide input data "yyyy" </em> </pre>
 	isInputDataStr = getDataInputString(&dataStrPtr, cmdStr);
 
+
 	// See if this data qualifies for unsigned integer data (32 bit unsigned)
+	/// If input data exists, then attempt to convert it to numeric.
 	if (isInputDataStr)
 	{
 		isUintData = convStringToUint(&uIntData, dataStrPtr);
 	}
 
 
+	/// <pre>cmdToken is first 5 chars of command string, at most.
+	/// i.e. chars that come before the [xx], if index exists.</pre>
+
 	// Assume default..
 	cmdResponse = eUnknownCmd;
 
+	/// <pre>Look at first char of cmdToken
+	/// For valid first char, parse out the command and what to do with it. <br></pre>
+	/**
+	 * <b> Flow of Control - Parse Cases:</b> <br>
+	 */
 	switch (letter1)
 	{
-		case 'C':	// "Command" ??
+		/// 'C[xx]' indicates a command "xx".
+		case 'C':
 			if (cmdLength == 1)
 			{
 				cmdResponse = eIndexError; // assume worst, hope  best:
@@ -449,7 +503,8 @@ void cmdHandler(char * cmdStr)
 			}
 			break;
 
-		case 'D': 	// "Data" ??
+		/// 'D[xx]' indicates a data set read/write.
+		case 'D':
 			if (cmdLength == 1)
 			{
 				cmdResponse = eIndexError;
@@ -476,6 +531,8 @@ void cmdHandler(char * cmdStr)
 			}
 			break;
 
+		/// 'H[xx]' indicates help page request. <br>
+		/// 'H' by itself indicates, system halt/restart request.
 		case 'H':	// "help" or "halt" ?
 			if (strLength == 1)
 			{
@@ -517,6 +574,7 @@ void cmdHandler(char * cmdStr)
 			}
 			break;
 
+		/// 'S[xx]' indicates status of type "xx" request.
 		case 'S':	// "Status", "Streaming Status" ?
 			if (cmdLength == 1)
 			{	// Must be the S command.
@@ -539,6 +597,7 @@ void cmdHandler(char * cmdStr)
 					cmdResponse = eIndexRangeExceeded;
 				}
 			}
+			/// 'SS[xx]' indicates  streaming (repeating) status of type "xx" request.
 			else if (strcmp(cmdToken, "SS") == strEQUALITY)
 			{
 				cmdResponse = eIndexError; // assume worst, hope  best:
@@ -560,7 +619,7 @@ void cmdHandler(char * cmdStr)
 				}
 			}
 			break;
-
+		/// 'M[xxxxxxxx]' or 'M[xx..]=yy..' => Memory/IO/SFR read or write.
 		case 'M':	// Report any 4 bytes worth of memory/IO/SFR's
 			if (cmdLength == 1)
 			{	// Must be the M command.
@@ -629,7 +688,9 @@ void cmdHandler(char * cmdStr)
     }
 
       //UartPutString(crlf_msg, false);
-      UartPutString(respBuffer, false);
-      //UartPutString(crlf_msg, false);
 
+      /// <br> Finally send response based on what command received back to terminal.
+      UartPutString(respBuffer, false);
+      ///  \pagebreak
+      //UartPutString(crlf_msg, false);
 }
