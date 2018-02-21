@@ -1,4 +1,26 @@
 /**
+* @file stm32f1xx_hal_msp_mod.c
+* @brief Code originates from "stm32f1xx_hal_msp.c" STM generated code, bug fix via JMK.
+*
+*<pre>
+* This code is generated based on STM cube user selected config of the CPU / Dev board.
+*
+* The only function modified is "void HAL_I2C_MspInit(I2C_HandleTypeDef* hi2c)".
+*
+* Ref bug: https://electronics.stackexchange.com/questions/272427/stm32-busy-flag-is-set-after-i2c-initialization
+*
+* The target platform is STM32VLDISCOVERY demo board with STM Arm Cortex M3
+* p/n STM32F100RBT6B.
+* </pre>
+*
+* @author STMicroelectronics
+* @author Joe Kuss (JMK)
+*
+* @date 2/19/2018
+*/
+
+
+/*
   ******************************************************************************
   * File Name          : stm32f1xx_hal_msp_mod.c		(Modified by jmk.)
   * Description        : This file provides code for the MSP Initialization 
@@ -132,6 +154,13 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
 
 }
 
+/**
+ * Peripheral clock enable moved to before call
+ * to HAL_GPIO_Init(..) - Only this function was modified by JMK.
+ *
+ * Ref: https://electronics.stackexchange.com/questions/272427/stm32-busy-flag-is-set-after-i2c-initialization
+ *
+ */
 void HAL_I2C_MspInit(I2C_HandleTypeDef* hi2c)
 {
 

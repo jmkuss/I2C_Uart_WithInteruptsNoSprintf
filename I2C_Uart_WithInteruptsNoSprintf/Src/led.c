@@ -29,9 +29,6 @@
 #include "led.h"
 
 const uint16_t GPIO_PIN[LEDn] 		= {LD3_Green_Pin, LD4_Blue_Pin};
-const uint16_t BUTTON_PIN[BUTTONn] 	= {BlueButton_Pin};
-
-GPIO_TypeDef* BUTTON_PORT[BUTTONn] = {BlueButton_GPIO_Port};
 
 // Not needed since have it all done by "MX_GPIO_Init(void)"
 //void STM32vldisc_LEDInit(Led_TypeDef Led)

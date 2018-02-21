@@ -1,32 +1,45 @@
-/*
- * strUtilities.c
- *
- *  Created on: Nov 16, 2017
- *      Author: jmk
- */
-//#include <stdlib.h>
+/**
+  @file strUtilities.c
+  @brief String Utility - "su" functions
+<pre>
+
+</pre>
+
+   @author 	Joe Kuss (JMK)
+   @date 	11/16/2017 - Original.
+   @date 	2/19/2018  - Added Doxygen comments, etc.
+
+*/
+
 #include <stdint.h>
 #include <ctype.h>
 #include <stdbool.h>
 #include "strUtilities.h"
 
 // Ref: https://stackoverflow.com/questions/18688971/c-char-array-initialization
-char stringToFill[STR_U32_LENGTH_MAX] = "";
+/// Initialized to fill with nulls:
+char suStringToFill[STR_U32_LENGTH_MAX] = "";
 
-/*
- * Add leading zeros to a string representing a hex number
- * This function assumes that the original string had no leading 0's
+/**
+ * @brief Add leading zeros to string representing a hex number depending on data width.
+ * <pre>
+ * Function assumes the original string had no leading 0's.
+ * </pre>
  *
+ * @param pCharArray - pointer to string (char array) being modified.
+ * @param eDataWidth - selects desired data width 0 padding: su8BIT, su16BIT, su32BIT.
  *
+ * String being created can be up to 10 chars max + 1 null at end.
  */
-void suPadForDataWidth(char * pCharArray, suDataWidthType eDataWidth )
+void suPadForHexDataWidth(char * pCharArray, suDataWidthType eDataWidth )
 {
 	int OriginalArraySize = 0;
 	int ZeroCharsNeeded;
 	int i = 0;
 	int j = 0;
 
-	char stringScratch[STR_U32_LENGTH_MAX]  = ""; // init to all nulls
+	// init  scratch string to all nulls.
+	char stringScratch[STR_U32_LENGTH_MAX]  = "";
 
    // Determination of original string size:
 
@@ -36,10 +49,20 @@ void suPadForDataWidth(char * pCharArray, suDataWidthType eDataWidth )
    }
    OriginalArraySize = i;
 
-   // note using "STR_U32_HEX_MAX" not "STR_U32_LENGTH_MAX"
-   ZeroCharsNeeded = ((STR_U32_HEX_MAX-1) - OriginalArraySize);
+   switch (eDataWidth)
+   {
+   case (su8BIT):
+		ZeroCharsNeeded = (HEXCHARS_FOR_8BITS - OriginalArraySize); // 2
+		break;
+   case (su16BIT):
+		ZeroCharsNeeded = (HEXCHARS_FOR_16BITS - OriginalArraySize); //4
+		break;
+   case (su32BIT):
+		ZeroCharsNeeded = (HEXCHARS_FOR_32BITS - OriginalArraySize); // 8
+		break;
+   }
 
-   // The end result will always be a string with (STR_U32_LENGTH_MAX-1) chars..
+   // The end result will always be a char array with (STR_U32_LENGTH_MAX-1) chars..
    // Build up the updated string, leave the last null alone.
    for (i=0, j=0; i<(STR_U32_LENGTH_MAX-1); i++)
    {
@@ -49,7 +72,7 @@ void suPadForDataWidth(char * pCharArray, suDataWidthType eDataWidth )
 	   }
 	   else
 	   {
-		   // Start reading from the start of pCharArray, the non zero chars
+		   // Start reading from the start of pCharArray, the non '0' numerical chars or NULLs
 		   stringScratch[i] = pCharArray[j++];
 		   // Note: j only increments here.
 	   }
@@ -61,14 +84,15 @@ void suPadForDataWidth(char * pCharArray, suDataWidthType eDataWidth )
    }
 }
 
-/*
- * Flip the order of characters in a string.
- * Note if the string was part of a char array only the chars up
- * to the first null char would be flipped.
+/**
+ * @brief Flip the order of characters in a string.
+ * <pre>
+ * Note: If the string was part of a char array with trailing NULLs,
+ *       only the chars up to the first null char will be flipped.
+ * </pre>
  *
- *
+ * @param pCharArray - pointer to string (char array) being flipped.
  */
-
 void suReverseOrder(char * pCharArray)
 {
     int HighElement;
@@ -105,20 +129,21 @@ void suReverseOrder(char * pCharArray)
        pCharArray[ArraySize-i-1] = pCharArray[i];
        pCharArray[i] = HighElement;
    }
-
-
 }
 
-/*
- * Convert a string to a U32.
- *
- * This function is used instead of
- * stdlib.h function "strtoul"
- *
+/**
+ * @brief Convert a string to a U32.
+ * <pre>
  * It skips all leading whitespace and then converts string to U32 if it is valid.
  *
+ * Note: This function is used instead of stdlib.h  "strtoul(..)" to convert string to U32.
+ * </pre>
+ *
+ * @param stringToConvert - Input string
+ * @param type - Conversion type, either suDECIMAL or suHEX.
+ * @param u32Ptr - Pointer to u32 value of conversion.
+ *
  */
-
 bool suStringToU32(char * stringToConvert, suConversionType type, uint32_t * u32Ptr)
 {
 
@@ -304,16 +329,19 @@ bool suStringToU32(char * stringToConvert, suConversionType type, uint32_t * u32
 	return (!failFlag);					// true if passes conversion.
 }
 
-/*
+/**
+ * @brief Convert a u32 to a text string, of type DECIMAL or HEX
+ * <pre>
+ * A Hex string in format "0x12345678", with leading 0's expected
+ * or
+ * A decimal string in format 9999 with no leading 0's expected.
  *
- * Convert a u32 to a text string, either:
+ * This function is used instead of "sprintf" to do conversion from binary to text.
+ * </pre>
  *
- *	A Hex string in format "0x12345678", with leading 0's expected
- *	or
- *	A decimal string in format 9999 with no leading 0's expected.
- *
- *	This function is called in lieu of "sprintf" doing the conversion from binary
- *	to text string.
+ * @param u32Value 			- u32 value to be converted.
+ * @param type 				- Conversion type, either suDECIMAL or suHEX.
+ * @param stringToCreate	- Output string
  */
 void suU32ToString( uint32_t u32Value, suConversionType type, char * stringToCreate )
 {
@@ -326,7 +354,6 @@ void suU32ToString( uint32_t u32Value, suConversionType type, char * stringToCre
 	// Init all elements of "stringToCreate" to '\0'
 	// so, when we stop adding printable digits the next will be null.
 	for (j=0; j<STR_U32_LENGTH_MAX; j++) { stringToCreate[j] = '\0'; }
-
 
 	// What is the maximum size of stringToCreate, presently:
 	// For Hex we need max of 0x12345678 plus the null char at the end 	= 11 chars.
@@ -401,7 +428,7 @@ void suU32ToString( uint32_t u32Value, suConversionType type, char * stringToCre
 	// For hex, pad in extra zeros since we want to make clear number is u32 address or data
 	if (type == suHEX)
 	{
-		suPadForDataWidth(stringToCreate, su32BIT );
+		suPadForHexDataWidth(stringToCreate, su32BIT );
 	}
 
 }

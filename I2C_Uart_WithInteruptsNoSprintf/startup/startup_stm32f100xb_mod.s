@@ -1,9 +1,10 @@
 /**
   *************** (C) COPYRIGHT 2017 STMicroelectronics ************************
-  * @file      startup_stm32f100xb.s
+  * @file      startup_stm32f100xb_mod.s (Originally startup_stm32f100xb.s)
   * @author    MCD Application Team
-  * @version   V4.2.0
-  * @date      31-March-2017
+  * @version   V4.2.0 -jmk-modified.1
+  * @date      31-March-2017 (original)
+  * @date      20-Feb-2018 ( For -jmk-modified.1 )
   * @brief     STM32F100xB Devices vector table for Atollic toolchain.
   *            This module performs:
   *                - Set the initial SP
@@ -14,6 +15,7 @@
   *                  calls main()).
   *            After Reset the Cortex-M3 processor is in Thread mode,
   *            priority is Privileged, and the Stack is set to Main.
+  * @note      JMK modifications are on lines 388-408
   ******************************************************************************
   *
   * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>

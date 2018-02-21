@@ -87,7 +87,7 @@ uint32_t KeyState = 0;
 //uint16_t targetAddressU16;
 
 /// Header msg displayed at startup
-char msg[] = "Serial Command Interpreter: v0.02 Copyright Feb 12, 2018, J.M. Kuss \r\n\r\n";
+char msg[] = "Serial Command Interpreter: v0.02 Copyright Feb 20, 2018, J.M. Kuss \r\n\r\n";
 uint8_t returnedByte;
 
 /* Private function prototypes -----------------------------------------------*/
@@ -100,6 +100,7 @@ static void MX_ADC1_Init(void);
 
 int main(void)
 {
+	uint32_t demoMode = 1;	// allow 1..3
 
 	// STM HAL  and initialization code:
 	/* MCU Configuration */
@@ -235,7 +236,6 @@ int main(void)
 		count++;
 		HAL_Delay(100);
 
-
 		/* BlinkSpeed: 0 */
 		if(BlinkSpeed == 0)
 		{
@@ -270,7 +270,7 @@ int main(void)
 			else
 				STM32vldisc_LEDOff(LED3);
 		}
-		/* BlinkSpeed: 3 */
+		/* BlinkSpeed: 3 - Only have 3 speeds 0,1,2 actually. */
 		else if(BlinkSpeed == 3)
 		{
 			BlinkSpeed = 0;

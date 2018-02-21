@@ -8,6 +8,7 @@
  */
 
 #include "stm32f1xx_hal.h"
+#include <stdbool.h>
 #include "pushButton.h"
 
 /// Array to specify pin # for selected button.

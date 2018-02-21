@@ -101,7 +101,7 @@ char  * help_1_str = "\r\n"
                 "(possibly with some restrictions).\r\n"
                 "------------------------------------------------------------- \r\n\r\n";
 
-\pagebreak
+
 /**
  * <pre>
  * Scans MainString, and returns pointer to
@@ -486,9 +486,9 @@ void cmdHandler(char * cmdStr)
 					// sprintf(respBuffer, "Received C[%u]\r\n", (unsigned int)index);
 
 					// Now convert u32 to string and build up a total string as response:
-					suU32ToString( index, suDECIMAL, stringToFill );
+					suU32ToString( index, suDECIMAL, suStringToFill );
 					strcpy(respBuffer, "Command requested: C[");
-					strcat(respBuffer,stringToFill);
+					strcat(respBuffer,suStringToFill);
 					strcat(respBuffer, "]\r\n");
 
 
@@ -515,9 +515,9 @@ void cmdHandler(char * cmdStr)
 					//sprintf(respBuffer, "Received D[%u]\r\n", (unsigned int)index);
 
 					// Now convert u32 to string and build up a total string as response:
-					suU32ToString( index, suDECIMAL, stringToFill );
+					suU32ToString( index, suDECIMAL, suStringToFill );
 					strcpy(respBuffer, "Data set requested: D[");
-					strcat(respBuffer,stringToFill);
+					strcat(respBuffer,suStringToFill);
 					strcat(respBuffer, "]\r\n");
 
 					cmdResponse = eNoFurtherComment;
@@ -557,9 +557,9 @@ void cmdHandler(char * cmdStr)
 						// Read out the current data
 						//sprintf(respBuffer, "Received H[%u]\r\n", (unsigned int)index);
 						// Now convert u32 to string and build up a total string as response:
-						suU32ToString( index, suDECIMAL, stringToFill );
+						suU32ToString( index, suDECIMAL, suStringToFill );
 						strcpy(respBuffer, "Help page requested: H[");
-						strcat(respBuffer,stringToFill);
+						strcat(respBuffer,suStringToFill);
 						strcat(respBuffer, "]");
 						strcat(respBuffer, " - does not exist !\r\n");
 					}
@@ -585,9 +585,9 @@ void cmdHandler(char * cmdStr)
 					// Read out the current data
 					//sprintf(respBuffer, "Received status request: S[%u]\r\n", (unsigned int)index);
 					// Now convert u32 to string and build up a total string as response:
-					suU32ToString( index, suDECIMAL, stringToFill );
+					suU32ToString( index, suDECIMAL, suStringToFill );
 					strcpy(respBuffer, "Status requested: S[");
-					strcat(respBuffer,stringToFill);
+					strcat(respBuffer,suStringToFill);
 					strcat(respBuffer, "]\r\n");
 					cmdResponse = eNoFurtherComment;
 
@@ -607,9 +607,9 @@ void cmdHandler(char * cmdStr)
 					// Read out the current data
 					//sprintf(respBuffer, "Received streaming status request: SS[%u]\r\n", (unsigned int)index);
 					// Now convert u32 to string and build up a total string as response:
-					suU32ToString( index, suDECIMAL, stringToFill );
+					suU32ToString( index, suDECIMAL, suStringToFill );
 					strcpy(respBuffer, "Streaming status requested: SS[");
-					strcat(respBuffer,stringToFill);
+					strcat(respBuffer,suStringToFill);
 					strcat(respBuffer, "]\r\n");
 					cmdResponse = eNoFurtherComment;
 				}
@@ -624,28 +624,51 @@ void cmdHandler(char * cmdStr)
 			if (cmdLength == 1)
 			{	// Must be the M command.
 				cmdResponse = eIndexError; // assume worst, hope  best:
+
+				// if the "index" found in [xxxxxxxx] is a valid U32 index:
 				if ( isU32Index  )
 				{
 					uint32_t *MemorySpacePtr;
+
+					// Get the address (pointer) selected via the index M[xxxxxxxx]
 					MemorySpacePtr = (uint32_t *)index;
+
+					// Now convert index of u32 to back to string to use as part of response:
 					// sprintf(respBuffer, "Memory M[0x%08X]", (unsigned int)index);
-					// Now convert u32 to string and build up a total string as response:
-					suU32ToString( index, suHEX, stringToFill );
-					strcpy(respBuffer, "Memory/IO query: M[0x");
-					strcat(respBuffer,stringToFill);
-					strcat(respBuffer, "]");
+					suU32ToString( index, suHEX, suStringToFill );
 
-					// Translate what we read via MemorySpacePtr, to hex string
-					//sprintf(strOf20CharsMax, " = 0x%08X \r\n", (unsigned int)*MemorySpacePtr);
-					suU32ToString( (unsigned int)*MemorySpacePtr, suHEX, stringToFill );
-					strcat(respBuffer, " = 0x");
-					strcat(respBuffer,stringToFill);
-					strcat(respBuffer, "\r\n");
-
-					//strcat(respBuffer,strOf20CharsMax);
-
-					cmdResponse = eNoFurtherComment;
-					//cmdResponse = eGotM;
+					// Check flags to see:
+					// 1) if an "=" sign after the index, which indicates data to write.
+					// 2) The data to write is a valid number and was converted to Uint.
+					if (isInputDataStr && isUintData)
+					{
+						// We requested a write to memory/IO/SFR, so let's do it !
+						// Take uIntData and write it to loc. pointed to by MemorySpacePtr.
+						*MemorySpacePtr = uIntData;
+						strcpy(respBuffer, "Memory/IO write: M[0x");
+						strcat(respBuffer,suStringToFill);
+						strcat(respBuffer, "]");
+						strcat(respBuffer, " <== 0x");
+						suU32ToString( uIntData, suHEX, suStringToFill );
+						strcat(respBuffer,suStringToFill);
+						strcat(respBuffer, "\r\n");
+						cmdResponse = eNoFurtherComment;
+					}
+					else
+					{
+						// We requested a read from a memory/IO/SFR location
+						strcpy(respBuffer, "Memory/IO query: M[0x");
+						strcat(respBuffer,suStringToFill);
+						strcat(respBuffer, "]");
+						// Translate what we read via MemorySpacePtr, to hex string
+						//sprintf(strOf20CharsMax, " = 0x%08X \r\n", (unsigned int)*MemorySpacePtr);
+						suU32ToString( (unsigned int)*MemorySpacePtr, suHEX, suStringToFill );
+						strcat(respBuffer, " = 0x");
+						strcat(respBuffer,suStringToFill);
+						strcat(respBuffer, "\r\n");
+						cmdResponse = eNoFurtherComment;
+						//cmdResponse = eGotM;
+					}
 				}
 			}
 			break;

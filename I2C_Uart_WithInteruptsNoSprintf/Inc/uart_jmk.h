@@ -1,10 +1,15 @@
-/*
- * uart_jmk.h
- *
- *  Created on: Nov 13, 2017
- *      Author: jmk
- */
+/**
+  @file uart_jmk.h
+  @brief
+<pre>
 
+</pre>
+
+   @author 	Joe Kuss (JMK)
+   @date 	11/13/2017 - Original.
+   @date 	2/20/2018  - Added Doxygen comments, etc.
+
+*/
 #ifndef UART_JMK_H_
 #define UART_JMK_H_
 

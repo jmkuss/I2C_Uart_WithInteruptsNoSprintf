@@ -1,9 +1,15 @@
-/*
- * uart_jmk.c
- *
- *  Created on: Nov 8, 2017
- *      Author: jmk
- */
+/**
+  @file uart_jmk.c
+  @brief
+<pre>
+
+</pre>
+
+   @author 	Joe Kuss (JMK)
+   @date 	11/08/2017 - Original.
+   @date 	2/19/2018  - Added Doxygen comments, etc.
+
+*/
 #include <stdbool.h>
 #include <string.h>
 #include "stm32f100xb.h"
@@ -17,12 +23,19 @@ extern UART_HandleTypeDef huart1;
 
 /* Globally available buffers ------------------------------ */
 
+/// Incoming Data as picked up in "HAL_UART_Receive_IT" isr.
+uint8_t	Rx_data[2];
+
+/// Buffer holding latest incoming command.
 char	cmdBuffer[MSG_MAX_CHARS +1];
 
+/// Buffer holding outgoing response to command.
 char 	respBuffer[MSG_MAX_CHARS+1];
-char	strOf20CharsMax[21];
 
+char	strOf20CharsMax[21];
 char 	*crlf_msg = "\r\n";
+
+/// Flag indicating Command received, but not yet parsed/executed.
 bool	Cmd_Recieved = false;
 
 /* Private variables --------------------------------------- */
@@ -31,16 +44,26 @@ int 	i=0;
 
 
 uint8_t	Rx_index=0;
-uint8_t	Rx_data[2];
+
 uint8_t	Rx_Buffer[MSG_MAX_CHARS +1]; // >= 1 of 0x00 to terminate msg string.
 
 
-/*
- * HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+
+//  HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+/**
+ * @brief Called upon reception of incoming UART data
+ * <pre>
+ * This routine is called by "UART_Receive_IT" which is
+ * Called by HAL_UART_IRQHandler upon UART interrupt.
+ *
+ * Upon completion this routine calls HAL_UART_Receive_IT
+ * which re activates UART interrupts to pick up the next byte.
  *
  * This routine replaces the "__weak " version of this routine,
  * located in stm32f1xx_hal_uart.c
+ * </pre>
  *
+ * @param huart - pointer to UART_HandleTypeDef
  *
  */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
@@ -57,9 +80,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			}
 		}
 
-		// We presently assume <???> that end of line from "Enter" key,
-		// produces only a <CR> and not a <LF>. This received byte <CR>
-		// is presently not put into the Rx_data buffer list.
+		// We presently require that end of line from "Enter" key,
+		// produces only a <CR> (0x0D) and not a <LF> (0x0A).
+		// This received byte <CR> is presently used as the end of message flag,
+		// and is not put into Rx_Buffer.
 
 		if ((Rx_data[0] != 0x0D) && (Rx_index<255))// If received data different than 13 <CR>
 		{										   // and we are not about to overflow buffer,
@@ -74,7 +98,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			// Also if Rx_index == 255 we will also end up here to attempt to parse
 			// what we have so far since we will loose data if we go any further.
 
-			// Rx_indx is set to zero for next time next time that we come back to get more
+			// Rx_index is set to zero for next time that we come back to get more
 			// incoming bytes.
 			Rx_index = 0;
 
@@ -87,7 +111,29 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 }		// end HAL_UART_RxCpltCallback
 
 
-
+/**
+ * @brief Called when sending a string via the UART
+ * <pre>
+ *
+ *	Note:	Blocking TX means that routine will not exit
+ *			until all bytes are sent.
+ *			Not blocking TX means that routine sets up
+ *			Interrupts to send individual bytes but can
+ *			exit after that.
+ *
+ *			Not blocking allows other processing to resume
+ *		    before all bytes are sent, but it may NOT mean
+ *		    it is ok to attempt to send another message before
+ *		    all bytes are sent.
+ *
+ *
+ * </pre>
+ *
+ * @param strToTransmit - pointer to null terminated character array to TX.
+ * @param isBlocking - true for blocking TX of all bytes, false for non blocking.
+ *
+ *
+ */
 void UartPutString(char *strToTransmit, bool isBlocking)
 {
 	HAL_StatusTypeDef eHAL_Status;
