@@ -8,7 +8,7 @@
 *
 * @author Joe Kuss (JMK)
 *
-* @date 2/13/2018
+* @date 03/01/2018
 */
 
 /*
@@ -61,6 +61,7 @@
 #include "led.h"
 #include "pushButton.h"
 #include "serialCmdParser.h"
+#include "serialEEProm.h"
 
 
 /* External Variables ------------------------------------------------------- */
@@ -84,11 +85,17 @@ uint32_t BlinkSpeed = 0;
 /// Previous blue button pressed state, 1 == pressed.
 uint32_t KeyState = 0;
 
-//uint16_t targetAddressU16;
 
 /// Header msg displayed at startup
-char msg[] = "Serial Command Interpreter: v0.02 Copyright Feb 20, 2018, J.M. Kuss \r\n\r\n";
+//char msg[] = "Serial Command Interpreter: v0.02 Copyright" + __DATE__ + ", J.M. Kuss \r\n\r\n"; // does not like + here.
+char msg1[] = "Serial Command Interpreter: v0.02 Copyright ";
+char msg2[] = __DATE__;
+char msg3[] = " , J.M. Kuss \r\n\r\n";
+
 uint8_t returnedByte;
+
+HAL_StatusTypeDef I2C_HAL_Status;
+
 
 /* Private function prototypes -----------------------------------------------*/
 // STM code, and or modified by JMK:
@@ -126,7 +133,9 @@ int main(void)
 	// JMK code:
 
 	// Introductory HW string ==========================
-	UartPutString(msg, true);    // Blocking.
+	UartPutString(msg1, true);    // Blocking.
+	UartPutString(msg2, true);    // Blocking.
+	UartPutString(msg3, true);    // Blocking.
 
 	while (1)
 	{
@@ -180,6 +189,61 @@ int main(void)
 					KeyState = 1;
 					/* Turn ON LED4 - Indicate button pressed ! */
 					STM32vldisc_LEDOn(LED4);
+
+					// ########## Upon button push, execute these tests of sEEProm routines:
+
+					// T1: I2C_HAL_Status = sEEPromCurrentAddrReadByte(&hi2c2, A0A1_00, &eePromByteRead);
+					// T2: I2C_HAL_Status = sEEPromCurrentAddrReadBytes(&hi2c2, A0A1_00, eePromReadPageBytes.array, (uint16_t) eePromReadPageBytes.bytesInPage);
+					// T3: I2C_HAL_Status = sEEPromRandomAddrByteRead(&hi2c2, A0A1_00, 0x0000, &eePromByteRead);
+					// T4: I2C_HAL_Status = sEEPromRandomAddrReadBytes(&hi2c2, A0A1_00, 0x0000, eePromReadPageBytes.array, (uint16_t) eePromReadPageBytes.bytesInPage);
+
+					// Note: For testing the Writes, there is a 10ms max deadtime "tWR"
+					// This is also known as the write cycle time tWR is the time from a valid stop condition of a
+					// write sequence to the end of the internal clear/write cycle.
+					/* T5:
+					eePromByteToBeWritten = 0x77;
+					I2C_HAL_Status = sEEPromByteWrite(&hi2c2, A0A1_00, 0x0000,&eePromByteToBeWritten); // Write a byte to a page, page 0 byte 0.
+					// Delay for tWR of 10ms:
+
+					STM32vldisc_LEDToggle(LED4);// Toggle - pulse start.
+					HAL_Delay(10); 				// Delay 10ms, -  toggle port LED4 (PC8) pin to measure delay
+					STM32vldisc_LEDToggle(LED4);// Toggle - pulse start.
+
+					// Read back from same place to check for successful write:
+					I2C_HAL_Status = sEEPromRandomAddrByteRead(&hi2c2, A0A1_00, 0x0000, &eePromByteRead);
+					*/
+
+					/*
+					// T6 & T7. Write lowest page all 64 bytes, then read back.:
+					I2C_HAL_Status =  sEEPromBytesWrite(&hi2c2, A0A1_00, 0x0000,  eePromWritePageBytes.array, (uint16_t) eePromWritePageBytes.bytesInPage);
+
+					STM32vldisc_LEDToggle(LED4);// Toggle - pulse start.
+					HAL_Delay(10); 				// Delay 10ms, -  toggle port LED4 (PC8) pin to measure delay
+					STM32vldisc_LEDToggle(LED4);// Toggle - pulse start.
+
+					I2C_HAL_Status = sEEPromRandomAddrReadBytes(&hi2c2, A0A1_00, 0x0000, eePromReadPageBytes.array, (uint16_t) eePromReadPageBytes.bytesInPage);
+
+					// T7 Write highest page all 64 bytes, then read back.:
+					// Reset the read array struct so that we know that read really loaded the array.
+					sEEPromPageBufferFill(&eePromReadPageBytes, FILL_0 );
+					// Reset the write array struct so that we now count down rather than up, now from 63 to 0.
+					sEEPromPageBufferFill(&eePromWritePageBytes, FILL_REVERSE_INDEX );
+
+					I2C_HAL_Status =  sEEPromBytesWrite(&hi2c2, A0A1_00, 0x7FC0,  eePromWritePageBytes.array, (uint16_t) eePromWritePageBytes.bytesInPage);
+
+					STM32vldisc_LEDToggle(LED4);// Toggle - pulse start.
+					HAL_Delay(10); 				// Delay 10ms, -  toggle port LED4 (PC8) pin to measure delay
+					STM32vldisc_LEDToggle(LED4);// Toggle - pulse start.
+
+					I2C_HAL_Status = sEEPromRandomAddrReadBytes(&hi2c2, A0A1_00, 0x7FC0, eePromReadPageBytes.array, (uint16_t) eePromReadPageBytes.bytesInPage);
+
+					// *** Or do some kind of ACKNOWLEDGE POLLING:, do a 1 byte read,
+					// try sEEPromCurrentAddrReadByte(..) and see if we can repeat this command while I2C_HAL_Status
+					// is not ok for no ack, and hope that repeat does not hang up the HAL or the i2c prom.
+					// Once we see ok then it gave an ack and the busy period for page write is over.
+					// May need to experiment to see if this works.
+
+					*/
 
 					/// Every time pushbutton is pressed, cycle among
 					/// demoModes (test cases) : 1, 2, 3.

@@ -18,9 +18,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "i2c_jmk.h"
 #include "led.h"
-
-#define SIZE_OF_ONE_BYTE	1
-#define TIMEOUT_100MS		100
+#include "main.h"
 
 HAL_StatusTypeDef I2CWriteStatus;
 I2C_HandleTypeDef hi2c2;
